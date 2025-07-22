@@ -1,0 +1,231 @@
+@import "tachyons.min.css";
+
+:root {
+	--font-color: rgba(134, 153, 169, 1);
+  --bg-color: rgba(29, 30, 35, 1);
+  --code-bg: hsla(215,100%,80%,0.25);
+	--code-bg0: hsla(215,100%,80%,0);
+  --code-txt: hsla(200,100%,60%,1);
+	--h-txt: hsla(200,50%,60%,1);
+	--op-bg: yellow;
+}
+
+body {
+	/* font-size:   13pt; */
+  counter-reset: eles mods streams sidenotes;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+	/* font-family: "Avenir Next", "Avenir", "Helvetica Neue", Arial, Helvetica, sans-serif; */
+	/* line-height: 1.4; */
+	/* margin:      10%; */
+}
+
+h1, h2, h3, h4 {
+	color: var(--h-txt);
+}
+
+pre {
+	margin:      1.5em 0;
+	white-space: pre;
+}
+
+pre, code, tt {
+	font:        0.9em 'andale mono', 'lucida console', monospace;
+	line-height: 1.5;
+}
+
+code {
+	font-family: 'Roboto Mono', monospace;
+	/* font-size:   10.5pt; */
+	padding:    0.1em 0.3em;
+	margin-right: 5px;
+	background-color: var(--code-bg0);
+  color: var(--code-txt);
+  border: none;
+	border-radius: 2px;
+}
+
+.code-Orca {
+	background-color: var(--code-bg0);
+}
+
+.mod {
+  background-color: hsla(210,100%,60%,0.5);
+}
+
+.routes {
+  display: block;
+}
+
+.routes::after {
+	color: var(--code-txt);
+  padding-top: 25px;
+  content: '* A TOTAL OF ' counter(eles) ' ELEMENTS.';
+}
+
+code.yellow, code.gold {
+  counter-increment: eles;
+}
+
+pre {
+	color:         #fff;
+	text-align:    left;
+	line-height:   1.2em;
+	/* overflow-x:    scroll; */
+	background:    #161616;  /* #282c34; */
+	padding:       20pt;
+	margin:        20pt 0;
+	border-radius: 3pt;
+	white-space:   pre-wrap;
+	tab-size:      4;
+}
+
+.syntax-all {
+	color: #e6c07b;
+}
+
+.syntax-entity {
+	color: #abb2bf;
+}
+
+.syntax-tag {
+	color: #818896;
+}
+
+.syntax-keyword {
+	color: #818896;
+}
+
+.syntax-parameter {
+	color: #56b6c2;
+}
+
+.syntax-string {
+	color: #61aeee;
+}
+
+.syntax-constant {
+	color: #c678dd;
+}
+
+.syntax-variable {
+	color: #98c379;
+}
+
+.syntax-escape {
+	font-weight: bold;
+	color: #e06c75;
+}
+
+.syntax-comment {
+	color: #999;
+}
+
+.syntax-error {
+	color: #d19a66;
+}
+
+/* Custom Tufte sidenote style */
+
+sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.9rem;
+  padding: 2.5px;
+  margin: 5px;
+}
+
+sub { top: 0.4rem; }
+
+sup.sidenote-number {
+  font-size: 0.9rem;
+  counter-increment: sidenotes;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+sup.sidenote-number::after {
+  content: '[' counter(sidenotes) ']';
+  vertical-align: super;
+  margin-left: 2px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sidenote::before {
+  content: '[ ' counter(sidenotes) ' ] ';
+}
+
+i {
+  color: rgba(200, 153, 169, 1);
+}
+
+.sidenote, .marginnote {
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.0rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.96;
+  vertical-align: baseline;
+  position: relative;
+}
+/* end of custom Tufte sidenote style */
+
+a {
+  color: rgba(0, 191, 255, 0.8);
+}
+
+a:focus, a:hover {
+  color: rgba(30, 144, 255, 0.8);
+}
+
+.red {
+  background-color: hsla(0,100%,60%,0.25);
+  color: hsla(25,100%,60%,0.75);
+}
+
+.green {
+  background-color: hsla(160,100%,80%,0.25);
+  color: hsla(100,100%,40%,0.75);
+}
+
+.blue {
+  background-color: hsla(215,100%,80%,0.25);
+  color: hsla(190,100%,40%,0.75);
+}
+
+.magenta {
+  background-color: hsla(331,100%,60%,0.25);
+  color: hsla(325,100%,70%,0.75);
+}
+
+.cyan {
+  background-color: hsla(191,100%,60%,0.25);
+  color: hsla(192,100%,60%,0.75);
+}
+
+.yellow {
+  background-color: hsla(40,90%,75%,0.75);
+  color: hsla(192,0%,0%,0.75);
+}
+
+.bluegel {
+	background-color: rgba(30,144,255,0.8);
+	color: #000;
+}
+
+mark {
+  background-color: rgba(30,144,255,0.8);
+  padding: 0 4px 0 4px;
+}
+
+hr {
+  border: 1px dotted rgba(100,100,100,0.8);
+}
