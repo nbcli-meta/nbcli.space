@@ -13,9 +13,16 @@
     <link rel="stylesheet" href="global.css">
     </link>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+
 </head>
 
-<body class="avenir">
+<body class="avenir f5 lh-copy center measure-wide">
     <section class="pa3 pa4-m pa5-l">
         <a href="index.html" class="f5 link dim br2 ph3 pv2 mb2 dib white bg-near-black dib grow">
             <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
@@ -45,7 +52,143 @@
     </section>
 
     <section class="pa3 pa4-m pa5-l">
-        <p class="f6 dib ph3">writing in progress....</p>
+        <p>nbcli is the name of this instrument, and the name given to the ongoing research from which it was born.</p>
+        <img class="db center" src="domains.png" width="750px" />
+        <p>Meant for live coding, I became interested in accessing a variety of instruments while improvising, and
+            became interested in harnessing a way to access many tools on my machine. This pointed me towards the
+            command line and specifically the Bash language. As a research goal, I also wanted a tool for live coding
+            visuals that was customized for live coding 3D geometry, and something to live code physical computing
+            concoctions I might want to use. To me, this meant something to live code <a
+                href="https://en.wikipedia.org/wiki/General-purpose_input/output" target="_blank">GPIO</a> pins.</p>
+        <figure class="pb5">
+            <img class="db center" src="exp-dark.png" width="750px" />
+            <figcaption class="measure-narrow f7 center"><b>Figure 2.</b> Scan from research: expressivity.</figcaption>
+        </figure>
+        <p>Putting these objectives together, nbcli amounted to two things:</p>
+
+        <ul>
+            <li>a standalone application called <em>sigv</em>, built in Max</li>
+            <li>a configuration of Bash programs as utilities, commands, and terminal configurations.</li>
+        </ul>
+        <br /><br /><br />
+        <figure class="pb5">
+            <div class="w-70 center">
+                <img class="o-05" src="siamese.png" width="50%" /><img src="siamese.png" width="50%" />
+                <figcaption class="measure-narrow f7 center"><b>Figure 3. </b>Siamese Clocks, Orca code pattern that
+                    bounds clock operators.</figcaption>
+            </div>
+        </figure>
+        <figure class="pb5">
+            <div class="w-100">
+                <img class="db center" src="setups.png" width="750px" />
+                <figcaption class="measure-narrow f7 center"><b>Figure 3. </b>Imagining the various ways I would need
+                    this instrument to accomodate performance and installation</figcaption>
+            </div>
+        </figure>
+        <h3>Try it!</h3>
+
+        <p>To project you into my world of using this tool, download and extract the standalone from <a class="autolink"
+                href="https://magfoto.itch.io/sigv" target="_blank">itch.io</a>, then run the <a
+                href="https://github.com/nbcli-meta/nbcli" target="_blank">nbcli install</a> script which will install
+            the following:
+        </p>
+
+        <ul>
+            <li>MIDI utilities</li>
+            <li>OSC message sending utility</li>
+            <li>QR code making utility</li>
+            <li>directory of Bash scripts</li>
+            <li>terminal configuration file</li>
+        </ul>
+
+        <p>When ready, with your terminal open:</p>
+
+        <pre><code class="f7">sigv</code></pre>
+
+        <p>This should open the sigv standalone you downloaded and placed in the /Applications directory on your
+            computer (I made this on macOS). If this did nothing for you, you may have extracted your downloaded
+            application elsewhere, so you have two simple options:</p>
+
+        <ul>
+            <li>(macOS users) Move <a class="autolink" href="https://sigv.app">sigv.app</a> to the /Applications
+                directory</li>
+            <li>Or, open this invisible file with a text editor: /nbcli/sigv (referring to the folder created by the
+                install script).</li>
+        </ul>
+
+        <p>This is what the code looks like when you open it:</p>
+
+        <pre><code class="f7">
+        #!/bin/bash
+
+        if [[ &quot;$1&quot; == &quot;--config&quot; ]]
+        then
+            nano $HOME/nbcli/.sigvsh
+        elif [[ &quot;$1&quot; == &quot;-b&quot; ]]
+        then
+            cd $HOME/nbcli &amp;&amp; ls
+        else
+            echo &quot;Options: sigv --config [open .sigvsh configuration] -b [go to nbcli directory]&quot;
+            echo &quot; &quot;
+            echo &quot;sigv: an instrument and mini-language for transmodal live coding&quot;
+            echo &quot;https://magfoto.itch.io/sigv&quot;
+            open /Applications/sigv.app
+            cd &quot;$HOME/nbcli/&quot;
+        fi
+        </code></pre>
+
+        <p>Line 14 shows
+        <pre><code class="f7">open /Applications/sigv.app</code></pre> which you can change to the location of where you
+        have
+        your <a class="autolink" href="https://sigv.app">sigv.app</a> file (or sigv.exe on Windows).</p>
+
+        <p>So now you can run
+        <pre><code class="f7">sigv</code></pre> again and it should open a very small window (almost invisible) with
+        a little square and a “quit” button. </p>
+
+        <figure>
+            <img src="sigv-app.png" alt="" />
+        </figure>
+
+        <p>Above that is an invisible textfield, mostly meant for backup use, as the commands you send are actually from
+            the terminal window. Windows users who are having trouble with *nix (unix/linux flavor operating systems)
+            running on their machine, you can omit the terminal and use that textfield to send sigv commands.</p>
+
+        <p>From your terminals, let’s add some commands:</p>
+
+        <pre><code class="f7">
+        new wrld 0 0 wrld
+        </code></pre>
+
+        <p>A big window opens. Let’s change it’s size and precision:</p>
+
+        <pre><code class="f7">
+        wrld size 400 400
+        wrld dim 400 400
+        </code></pre>
+
+        <p>Much smaller window now. Now let’s load a primitive called <em>geo</em>:</p>
+
+        <pre><code class="f7">
+        new geo 0 0 geo
+        geo iso
+        </code></pre>
+
+        <p>You should see this...</p>
+
+        <figure>
+            <img src="sigv-window.png" width="75%" alt="" />
+        </figure>
+
+        <p>If you do, congratulations! (phew) </p>
+
+        <p>To try some more examples, take a closer look at the <a
+                href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33">commands</a>! A
+            work in progress.
+        </p>
+        <br />
+        <hr />
+        <p>- Marcus (@magfoto)</p>
     </section>
 
 </body>
