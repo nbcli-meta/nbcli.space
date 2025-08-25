@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nbcli meta-notation</title>
+  <link rel="stylesheet" href="global.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: #111;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.2;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 100vw;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    .title-scatter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .scatter-letter {
+      position: absolute;
+      font-size: 12px;
+      opacity: 0.25;
+      animation: float 20s infinite linear;
+      color: hsla(215, 100%, 80%, 0.25);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+      }
+    }
+
+    .main-title {
+      font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 24px;
+      margin-bottom: 40px;
+      text-transform: lowercase;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 10;
+      font-weight: 400;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-header {
+      font-size: 16px;
+      text-transform: lowercase;
+      margin-bottom: 20px;
+      color: #aaa;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
+    }
+
+    .theorem-block {
+      background: #0a0a0a;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 2px solid lightblue;
+      font-family: 'Courier New', monospace;
+    }
+
+    .theorem-statement {
+      color: lightblue;
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .theorem-desc {
+      color: #aaa;
+      font-size: 11px;
+      font-style: italic;
+    }
+
+    .axiom-list {
+      list-style: none;
+    }
+
+    .axiom-item {
+      background: #0f0f0f;
+      padding: 20px;
+      margin: 15px 0;
+      border: 1px solid #333;
+      position: relative;
+    }
+
+    .axiom-item::before {
+      content: attr(data-label);
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      background: #111;
+      padding: 0 10px;
+      font-size: 10px;
+      color: lightblue;
+      text-transform: uppercase;
+    }
+
+    .axiom-formula {
+      color: lightblue;
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .subscript {
+      font-size: 0.8em;
+      vertical-align: sub;
+    }
+
+    .axiom-constraints {
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .rule-block {
+      background: #050505;
+      padding: 20px;
+      margin: 15px 0;
+      border: 1px dashed #333;
+      position: relative;
+    }
+
+    .rule-number {
+      color: lightblue;
+      font-size: 14px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .rule-desc {
+      color: #ccc;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .derivation-steps {
+      background: #050505;
+      padding: 25px;
+      border: 1px solid #222;
+    }
+
+    .step {
+      margin: 12px 0;
+      font-family: 'Courier New', monospace;
+    }
+
+    .step-formula {
+      color: lightblue;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .step-desc {
+      color: #666;
+      font-size: 11px;
+      margin-left: 20px;
+    }
+
+    .expressivity-block {
+      background: #0a0a0a;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #444;
+    }
+
+    .expressivity-formula {
+      color: lightblue;
+      font-size: 16px;
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .expressivity-vars {
+      color: #aaa;
+      font-size: 11px;
+      margin-top: 10px;
+    }
+
+    .machine-diagram-container {
+      background: #111;
+      padding: 30px;
+      border: 1px solid #333;
+      display: block;
+      text-align: center;
+    }
+
+    .machine-diagram-container svg {
+      width: 25%;
+    }
+
+    /* Buffer styling matching SVG borders */
+    .buffer-symbol {
+      padding: 2px 6px;
+      margin: 0 2px;
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+
+    .abstract-buffer,
+    .transform-buffer {
+      stroke: hsla(215, 100%, 80%, 0.5);
+      fill: none;
+      color: lightblue;
+      border: 1.5px solid hsla(215, 100%, 80%, 0.5);
+      border-radius: 4px;
+      padding: 0.1em 0.3em;
+      background: none;
+    }
+
+    .abstract-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .abstract-line {
+      position: absolute;
+      height: 1px;
+      background: #222;
+      animation: slide 15s infinite linear;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100vw);
+      }
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 20;
+    }
+
+    .nav-links a {
+      color: #666;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 12px;
+      text-transform: lowercase;
+    }
+
+    .nav-links a:hover {
+      color: lightblue;
+    }
+
+    .footer-meta {
+      margin-top: 80px;
+      color: #444;
+      font-size: 11px;
+      text-align: center;
+      border-top: 1px solid #222;
+      padding-top: 20px;
+    }
+
+    .meta-notation {
+      background: #0f0f0f;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 3px solid lightblue;
+      font-family: 'Courier New', monospace;
+      color: lightblue;
+      font-size: 14px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .container {
+            padding: 15px;
+          }
+
+          .main-title {
+            font-size: 20px;
+          }
+
+          .nav-links {
+            position: static;
+            margin-bottom: 30px;
+          }
+
+          .nav-links a {
+            display: block;
+            margin: 5px 0;
+          }
+        }
+
+        .main-title {
+          font-size: 20px;
+        }
+
+        .nav-links {
+          position: static;
+          margin-bottom: 30px;
+        }
+
+        .nav-links a {
+          display: block;
+          margin: 5px 0;
+        }
+
+        .machine-flow {
+          flex-direction: column;
+        }
+
+        .flow-arrow {
+          transform: rotate(90deg);
+        }
+      }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="title-scatter">
+    <div class="scatter-letter" style="left: 5%; top: 10%; animation-delay: -2s">
+      M
+    </div>
+    <div class="scatter-letter" style="left: 15%; top: 30%; animation-delay: -8s">
+      O
+    </div>
+    <div class="scatter-letter" style="left: 25%; top: 60%; animation-delay: -12s">
+      S
+    </div>
+    <div class="scatter-letter" style="left: 35%; top: 20%; animation-delay: -5s">
+      T
+    </div>
+    <div class="scatter-letter" style="left: 45%; top: 80%; animation-delay: -15s">
+      R
+    </div>
+    <div class="scatter-letter" style="left: 55%; top: 40%; animation-delay: -3s">
+      A
+    </div>
+    <div class="scatter-letter" style="left: 65%; top: 70%; animation-delay: -9s">
+      N
+    </div>
+    <div class="scatter-letter" style="left: 75%; top: 25%; animation-delay: -6s">
+      S
+    </div>
+    <div class="scatter-letter" style="left: 85%; top: 55%; animation-delay: -11s">
+      M
+    </div>
+    <div class="scatter-letter" style="left: 95%; top: 85%; animation-delay: -1s">
+      E
+    </div>
+    <div class="scatter-letter" style="left: 10%; top: 50%; animation-delay: -7s">
+      S
+    </div>
+    <div class="scatter-letter" style="left: 30%; top: 90%; animation-delay: -14s">
+      ~
+    </div>
+    <div class="scatter-letter" style="left: 70%; top: 15%; animation-delay: -4s">
+      →
+    </div>
+    <div class="scatter-letter" style="left: 80%; top: 45%; animation-delay: -10s">
+      |
+    </div>
+    <div class="scatter-letter" style="left: 20%; top: 75%; animation-delay: -13s">
+      ε
+    </div>
+  </div>
+
+  <div class="abstract-elements">
+    <div class="abstract-line" style="top: 20%; animation-delay: -5s"></div>
+    <div class="abstract-line" style="top: 40%; animation-delay: -10s"></div>
+    <div class="abstract-line" style="top: 60%; animation-delay: -2s"></div>
+    <div class="abstract-line" style="top: 80%; animation-delay: -8s"></div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#theorem">theorem</a>
+    <a href="#axioms">axioms</a>
+    <a href="#rules">rules</a>
+    <a href="#derivation">derivation</a>
+  </div>
+
+  <div class="container">
+    <h1 class="main-title">nbcli meta-notation</h1>
+
+    <div class="machine-diagram-container">
+      <svg viewBox="0 0 70 115" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"
+        style="pointer-events: auto;">
+        <desc>
+          nbcli abstract machine
+          author: Marcus A. Gordon (@magfoto)
+        </desc>
+        <style>
+          svg {
+
+            background-color: #111;
+            &amp;
+
+            rect,
+            line,
+            circle {
+              stroke: hsla(215, 100%, 80%, 0.25);
+              fill: none;
+            }
+
+            &amp;
+
+            text {
+              fill: lightblue;
+            }
+          }
+
+          /* x-ray: proto-machinic view */
+          #sampler,
+          #expressor,
+          #pmos,
+          #ptrans,
+          #pmes {
+            visibility: visible;
+          }
+
+          /* L2: ergomimetic view */
+          #mos,
+          path,
+          #c&gt;
+          rect,
+          #c&gt;
+
+          text,
+          #mes {
+            visibility: hidden;
+          }
+
+          /* Model D: L3 Expressivity Layer view */
+          #sampler,
+          #pmos,
+          #ptrans,
+          .branch {
+            visibility: visible;
+          }
+
+          #mos rect,
+          #mes rect {
+            stroke: #999;
+            fill: #fff;
+          }
+
+          #mos,
+          #mes {
+            stroke-width: 0.5px;
+          }
+
+          #c {
+            z-index: -999;
+          }
+
+          #a {
+            z-index: 2;
+          }
+
+          path {
+            stroke: black;
+            fill: none;
+            stroke-width: 0.125;
+            stroke-dasharray: 1, .5;
+          }
+
+          rect,
+          circle,
+          line {
+            stroke-width: 0.25;
+            stroke: #111;
+            fill: none;
+          }
+
+          text {
+            font: 2.5px sans-serif;
+            fill: #111;
+          }
+
+          .time {
+            fill: #aaa;
+            font: italic 2.5px sans-serif;
+          }
+
+          #c rect:nth-child(10)~rect,
+          .branch {
+            stroke: #aaa;
+            stroke-width: 0.125;
+          }
+
+          .bound {
+            stroke: #aaa;
+            stroke-width: 0.1;
+          }
+
+          circle {
+            fill: #fff;
+          }
+
+          text tspan,
+          .blank text tspan {
+            font: 1.6px sans-serif;
+            fill: #aaa;
+          }
+
+          #spec text:first-child {
+            text-decoration: underline;
+          }
+
+          #spec {
+            visibility: collapse;
+          }
+        </style>
+        <g id="a">
+          <g id="b">
+            <g id="sampler">
+              <text x="5.5" y="24.5">
+                <tspan>S</tspan>
+              </text>
+              <rect x="7.5" y="25" width="2.5" height="35"></rect>
+            </g>
+            <g id="mos">
+              <text x="9.5" y="64.5">
+                <tspan>MOS</tspan>
+              </text>
+              <path d="M 8.75 22.5 h 5 v 40 h -5 v -40"></path>
+            </g>
+            <g id="pmos">
+              <rect x="7.5" y="25" width="2.5" height="35"></rect>
+              <line x1="15" y1="15" x2="15" y2="70"></line>
+              <circle cx="15" cy="27.5" r="2.5"></circle>
+              <circle cx="15" cy="37.5" r="2.5"></circle>
+              <circle cx="15" cy="47.5" r="2.5"></circle>
+              <circle cx="15" cy="57.5" r="2.5"></circle>
+            </g>
+          </g>
+          <g id="c">
+            <rect x="12.5" y="25" width="48" height="35"></rect>
+            <path d="M 14.5 26.5 h 15 v 32 h -15 v -32"></path>
+            <text x="20.5" y="44">
+              <tspan>A</tspan>
+            </text>
+            <path d="M 30 26.5 h 28.75 v 32 h -28.75 v -32"></path>
+            <text x="40.5" y="44">
+              <tspan>S</tspan>
+            </text>
+            <path d="M 50.75 39 h 7.5 v 8 h -7.5 v -8"></path>
+            <text x="54" y="44">
+              <tspan>F</tspan>
+            </text>
+            <g id="ptrans">
+              <text class="time" x="27.25" y="20.25">t</text>
+              <text x="26.5" y="28.25">A</text>
+              <text x="26.5" y="38.25">V</text>
+              <text x="26.5" y="48.25">C</text>
+              <text x="27" y="58.25">I</text>
+              <rect x="25" y="24.75" width="5" height="5"></rect>
+              <rect x="25" y="34.75" width="5" height="5"></rect>
+              <rect x="25" y="44.75" width="5" height="5"></rect>
+              <rect x="25" y="54.75" width="5" height="5"></rect>
+              <rect class="bound" x="22.5" y="22.25" width="10" height="30"></rect>
+              <line x1="30" y1="27.5" x2="40" y2="27.5"></line>
+              <line x1="30" y1="37.5" x2="40" y2="37.5"></line>
+              <line x1="30" y1="47.5" x2="40" y2="47.5"></line>
+              <line x1="30" y1="57.5" x2="40" y2="57.5"></line>
+              <text x="41" y="28.25"> S<tspan>o</tspan></text>
+              <text x="41" y="38.25">S<tspan>p</tspan></text>
+              <text x="41.25" y="48.25">K<tspan>i</tspan></text>
+              <text x="41" y="58.25">S<tspan>p</tspan></text>
+              <rect x="40" y="24.75" width="5" height="5"></rect>
+              <rect x="40" y="34.75" width="5" height="5"></rect>
+              <rect x="40" y="44.75" width="5" height="5"></rect>
+              <rect x="40" y="54.75" width="5" height="5"></rect>
+            </g>
+          </g>
+          <g id="d">
+            <g id="expressor">
+              <text x="66.5" y="24.5">
+                <tspan>E</tspan>
+              </text>
+              <rect x="63" y="25" width="2.5" height="35"></rect>
+            </g>
+            <g id="mes">
+              <text x="60" y="64.5">
+                <tspan>MES</tspan>
+              </text>
+              <path d="M 59.25 22.5 h 5 v 40 h -5 v -40"></path>
+            </g>
+            <g id="pmes">
+              <line class="branch" x1="45" y1="27.5" x2="53" y2="22.75"></line>
+              <line class="branch" x1="45" y1="37.5" x2="53" y2="42.5"></line>
+              <line class="branch" x1="45" y1="47.5" x2="53" y2="62.75"></line>
+              <line class="branch" x1="45" y1="57.5" x2="53" y2="42.5"></line>
+              <line x1="55.5" y1="15" x2="55.5" y2="70"></line>
+              <circle cx="55.5" cy="62.5" r="2.5"></circle>
+              <circle cx="55.5" cy="42.5" r="2.5"></circle>
+              <circle cx="55.5" cy="22.5" r="2.5"></circle>
+              <circle cx="55.5" cy="71" r="1.25"></circle>
+              <circle cx="55.5" cy="52.5" r="1.25"></circle>
+              <circle cx="55.5" cy="32.5" r="1.25"></circle>
+              <circle cx="55.5" cy="14" r="1.25"></circle>
+              <text x="0.125" y="14" transform="rotate(-90,59,14)">
+                <tspan>trop</tspan>
+              </text>
+              <text x="18.125" y="14" transform="rotate(-90,59,14)">
+                <tspan>morph</tspan>
+              </text>
+              <text x="38.75" y="14" transform="rotate(-90,59,14)">
+                <tspan>mod</tspan>
+              </text>
+              <text x="57.5" y="14" transform="rotate(-90,59,14)">
+                <tspan>dim</tspan>
+              </text>
+            </g>
+          </g>
+        </g>
+        <g id="spec">
+          <text x="5.5" y="80">
+            <tspan>Specifications</tspan>
+          </text>
+          <text x="5.5" y="84.5">
+            <tspan>Axiom: <tspan> Sx | X → Yn | Ex</tspan>
+            </tspan>
+          </text>
+          <text x="5.5" y="89.5">
+            <tspan>Abstract Buffers (IN): <tspan>A V C I { audio, video, control voltage, image }</tspan>
+            </tspan>
+          </text>
+          <text x="5.5" y="94.5">
+            <tspan>Transform Buffers (TRANS): <tspan> So, Sp, Ki { sonic, spatial, kinetic }</tspan>
+            </tspan>
+          </text>
+          <text x="5.5" y="99.5">
+            <tspan>Output Buffers (OUT): <tspan> Eo, Ep, Ei { sonic, spatial, kinetic }</tspan>
+            </tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="section" id="theorem">
+      <div class="section-header">theorem</div>
+      <div class="theorem-block">
+        <div class="theorem-statement">
+          1.1 : S<span class="subscript">a~</span> |
+          <span class="abstract-buffer">A</span> →
+          <span class="transform-buffer">S<span class="subscript">o</span></span>
+          | E<span class="subscript">o</span>
+        </div>
+        <div class="theorem-desc">
+          canonical form of nbcli meta-notation: sampled audio input through
+          abstract buffer <span class="abstract-buffer">A</span> transforms to
+          sonic output
+          <span class="transform-buffer">S<span class="subscript">o</span></span>
+          expressed as E<span class="subscript">o</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="axioms">
+      <div class="section-header">axioms</div>
+      <ul class="axiom-list">
+        <li class="axiom-item" data-label="a1">
+          <div class="axiom-formula">S<span class="subscript">x</span></div>
+          <div class="axiom-constraints">
+            ( x ∈ a || v || c || i || a~ || v~ || c~ || i~ )
+          </div>
+          <div style="color: #666; font-size: 11px; margin-top: 8px">
+            sampler input types: audio, video, control, image (raw or sampled)
+          </div>
+        </li>
+        <li class="axiom-item" data-label="a2">
+          <div class="axiom-formula">
+            | <span class="abstract-buffer">x</span> →
+            <span class="transform-buffer">S<span class="subscript">y</span></span>
+            |
+          </div>
+          <div class="axiom-constraints">
+            ( x ∈ <span class="abstract-buffer">A</span> ||
+            <span class="abstract-buffer">V</span> ||
+            <span class="abstract-buffer">C</span> ||
+            <span class="abstract-buffer">I</span> )<br />( y ∈ o || p || i )
+          </div>
+          <div style="color: #666; font-size: 11px; margin-top: 8px">
+            transformation from abstract buffers to transform buffers (sonic,
+            spatial, kinetic)
+          </div>
+        </li>
+        <li class="axiom-item" data-label="a3">
+          <div class="axiom-formula">E<span class="subscript">x</span></div>
+          <div class="axiom-constraints">( x ∈ o || p || i )</div>
+          <div style="color: #666; font-size: 11px; margin-top: 8px">
+            expressor output types: sonic, spatial, kinetic
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section" id="expressivity">
+      <div class="section-header">expressivity function</div>
+      <div class="expressivity-block">
+        <div class="expressivity-formula">
+          e = f(dim<span class="subscript">xyz</span>, mod<span class="subscript">n</span>, morph<span
+            class="subscript">bool</span>, trop<span class="subscript">-1:1</span>) / t
+        </div>
+        <div class="expressivity-vars">
+          <strong>dim<span class="subscript">xyz</span></strong>: dimensional space<br>
+          <strong>mod<span class="subscript">n</span></strong>: modularity (n modules)<br>
+          <strong>morph<span class="subscript">bool</span></strong>: transformation capability (true/false)<br>
+          <strong>trop<span class="subscript">-1:1</span></strong>: tropism range (gravitropic ↔ phototropic)
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="rules">
+      <div class="section-header">rules of production</div>
+      <div class="rule-block">
+        <div class="rule-number">Rule 1: Add axiom</div>
+        <div class="rule-desc">
+          If there is sampled or unit generated input, then begin with Axiom 1, if
+          not, begin with Axiom 2.
+        </div>
+      </div>
+      <div class="rule-block">
+        <div class="rule-number">Rule 2: Add abstract buffer(s)</div>
+        <div class="rule-desc">
+          If there is more than one abstract buffer (e.g
+          <span class="abstract-buffer">A</span> and
+          <span class="abstract-buffer">V</span>), place them side by side in the
+          statement before the transform arrow (→).
+        </div>
+      </div>
+      <div class="rule-block">
+        <div class="rule-number">Rule 3: Add transform buffer(s)</div>
+        <div class="rule-desc">
+          Likewise to rule 2, if there is more than one transform buffer (e.g.
+          S<span class="subscript">o</span> and S<span class="subscript">p</span>), place only the series of n side by
+          side with the transform buffer
+          after the transform arrow (→). Like this: S<span class="subscript">op</span>.
+        </div>
+      </div>
+      <div class="rule-block">
+        <div class="rule-number">Rule 4: Add output buffer(s)</div>
+        <div class="rule-desc">
+          Likewise to rule 2 and 3, if there is more than one output buffer (e.g.
+          E<span class="subscript">o</span> and E<span class="subscript">p</span>), place only the series of x side by
+          side in Axiom 3. Like this:
+          E<span class="subscript">op</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="derivation">
+      <div class="section-header">derivation</div>
+      <div class="derivation-steps">
+        <div class="step">
+          <div class="step-formula">
+            Axiom 1 : S<span class="subscript">a~</span>
+          </div>
+          <div class="step-desc">begin with sampled audio input</div>
+        </div>
+        <div class="step">
+          <div class="step-formula">
+            Apply Rule 2 : S<span class="subscript">a~</span> |
+            <span class="abstract-buffer">A</span> →
+            <span class="transform-buffer">S<span class="subscript">n</span></span>
+            |
+          </div>
+          <div class="step-desc">
+            add abstract buffer <span class="abstract-buffer">A</span>, prepare
+            for transformation
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-formula">
+            Apply Rule 3 : S<span class="subscript">a~</span> |
+            <span class="abstract-buffer">A</span> →
+            <span class="transform-buffer">S<span class="subscript">o</span></span>
+            | E<span class="subscript">o</span>
+          </div>
+          <div class="step-desc">
+            add transform buffer
+            <span class="transform-buffer">S<span class="subscript">o</span></span>
+            and output buffer E<span class="subscript">o</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-formula">
+            Result: S<span class="subscript">a~</span> |
+            <span class="abstract-buffer">A</span> →
+            <span class="transform-buffer">S<span class="subscript">o</span></span>
+            | E<span class="subscript">o</span>
+          </div>
+          <div class="step-desc">
+            complete meta-notation expressing the transformation chain
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top: 40px">
+        extended notation with expressivity
+      </div>
+      <div class="meta-notation">
+        S<span class="subscript">a~</span> |
+        <span class="abstract-buffer">A</span> →
+        <span class="transform-buffer">S<span class="subscript">n</span></span> |
+        E<span class="subscript">o</span> ⟶ (xyz,1,0,±2)
+      </div>
+      <div style="color: #666; font-size: 11px; margin-top: 10px">
+        expressivity parameters: (dimensional space, modularity, morphology,
+        tropism)
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <a href="https://nbcli.space">nbcli</a> is a meta-instrument for live coding architecture<br />
+      formal system inspired by hofstadter's miu-system and pq-system<br /><br />
+      &copy; 2025 Marcus A. Gordon
+    </div>
+  </div>
+
+
+  <script>
+
+  </script>
+
+
+</body>
+
+</html>
