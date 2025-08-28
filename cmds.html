@@ -707,6 +707,91 @@
                     </div>
                 </div>
 
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="lttp" class="command-signature">lttp [options]</div>
+                        <div class="command-description">Listen to the Pictures (LTTP://) standalone element</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">sub | ch | metro | activate | slider | close | port | pos
+                                    | drunk</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ea5dd482514f4659bfeb426369309dee&pm=s"
+                                        target="_blank">nbcli.DB.lttp</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">lttp activate 1
+                            <span class="comment"># Powers on the lttp module.</span>
+                            <br>lttp pos 352
+                            <span class="comment"># Move lttp image scan slider to position 352 (value in x position of
+                                pixel dimension being scanned).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="nature" class="command-signature">nature [options]</div>
+                        <div class="command-description">Audio/biquad sensor</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">bi | mult | peak | mode | sense</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=784eeaf751ad441ab249c3a834c2418f&pm=s"
+                                        target="_blank">nbcli.DB.nature</a></span><br>
+                                <br><span class="param-name">options:mode</span> <span class="param-type">morph turn
+                                    group tex bloom line</span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">nature mode bloom 1
+                            <span class="comment"># Powers on the bloom response (same as running
+                                <pre><code>fx . bloom_amt 3.5</code></pre>).
+                            </span>
+                            <br>nature sense hi 1
+                            <span class="comment"># Turns on hi range sensitivity.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="midi" class="command-signature">midi [options] or note [options]</div>
+                        <div class="command-description">MIDI interface element.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">vol | vst1 | vst2 | vst3 | vst4 | inport | outport | note
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=8a7ae8324f86415abea3ca26bf4aab4c&pm=s"
+                                        target="_blank">nbcli.DB.midi</a></span>
+                            </div>
+                            <div class="param-item">
+                                <span class="param-description">Note param mostly used for sending a single note
+                                    message.</span>
+                            </div>
+
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">midi vst1 plug london.vst
+                            <span class="comment"># Opens Korg London synth into first vst buffer.</span>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="subsection-title">Spatial</h2>
 
                 <div class="command-block">
