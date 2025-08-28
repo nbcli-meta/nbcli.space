@@ -795,6 +795,113 @@
                     </div>
                 </div>
 
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="wave" class="command-signature">wave [options]</div>
+                        <div class="command-description">Multichannel voice-allocated wavetable synth.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">activate | metro | buffer | freq | start | end | env |
+                                    vol
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2a9fbf0ca12747c4a55c388285cf1923&pm=s"
+                                        target="_blank">nbcli.DB.wave</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">wave buffer test.wav
+                            <span class="comment"># Opens test.wav file into wave buffer.</span>
+                            <br>wave activate 1<span class="comment"># Activates wave module for use.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="grain" class="command-signature">grain [options]</div>
+                        <div class="command-description">Gen-based granular synthesizer.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">activate | metro | buffer | freq | start | end | env |
+                                    vol
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=d286f80450504e8cbe67eedad4ba0d91&pm=s"
+                                        target="_blank">nbcli.DB.grain</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">grain sample sine.wav
+                            <span class="comment"># Opens sine.wav file into grain buffer.</span>
+                            <br>grain density 100<span class="comment"># Changes grain density to 100.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="spk" class="command-signature">spk [value] and/or [options]</div>
+                        <div class="command-description">16 channel audio buffer/player element.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">value</span> <span class="param-type">number</span>
+                                <div class="param-description">1 ... 16
+                                </div>
+                            </div>
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">play
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=be06fdcb3e004653b8d76cd857257e7b&pm=s"
+                                        target="_blank">nbcli.DB.spk</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">spk 2 read $snd-clips/drumstep.wav
+                            <span class="comment"># Opens drumstep.wav file into spk 2 buffer.</span>
+                            <br>spk 2 open<span class="comment"># Opens a view of the waveform in spk 2 buffer.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="synth" class="command-signature">synth [options]</div>
+                        <div class="command-description">Internal unit generator synth (beta).</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">tri | cycle | saw | rect | amp
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ca0965a330bc4f869692378419581182&pm=s"
+                                        target="_blank">nbcli.DB.synth</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">synth read $snd-clips/drumstep.wav
+                            <span class="comment"># Opens drumstep.wav file into spk 2 buffer.</span>
+                            <br>spk 2 open<span class="comment"># Opens a view of the waveform in spk 2 buffer.</span>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="subsection-title">Spatial</h2>
 
                 <div class="command-block">
