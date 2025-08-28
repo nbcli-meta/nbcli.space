@@ -926,6 +926,119 @@
                     </div>
                 </div>
 
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="morph" class="command-signature">morph "[operation]" [repeat value] [repeat duration]
+                        </div>
+                        <div class="command-description">Morphing command for grain, geo and proc (norm)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">operation</span> <span class="param-type">string</span>
+                                <div class="param-description">statement of the operation to execute</div>
+                                <br>
+                                <span class="param-name">repeat value</span> <span class="param-type">number</span>
+                                <div class="param-description">amount of iterations of specified operation</div>
+                                <br>
+                                <span class="param-name">repeat duration</span> <span class="param-type">string</span>
+                                <div class="param-description">duration of each repeated value</div>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">morph "geo ^" 250 1
+                            <span class="comment"># Morphs geo modules shape 3 times (locked in value)randomly between
+                                geo gs1 shape and geo gs2 shape, 250 shape points over 1 second.</span>
+                            <br>morph "grain position" 2500 1
+                            <span class="comment"># Morphs the grain synth playhead 3 times between positions, at a
+                                resolution of 2500 interpolated points.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="morph0" class="command-signature">morph0 "[operation]" [repeat value] [repeat duration]
+                        </div>
+                        <div class="command-description">Morphing command for grain, geo and proc (snorm)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">operation</span> <span class="param-type">string</span>
+                                <div class="param-description">statement of the operation to execute</div>
+                                <br>
+                                <span class="param-name">repeat value</span> <span class="param-type">number</span>
+                                <div class="param-description">amount of iterations of specified operation</div>
+                                <br>
+                                <span class="param-name">repeat duration</span> <span class="param-type">string</span>
+                                <div class="param-description">duration of each repeated value</div>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">morph0 "geo ^" 250 1
+                            <span class="comment"># Morphs geo modules shape 3 times (locked in value)randomly between
+                                geo gs1 shape and geo gs2 shape, 250 shape points over 1 second.</span>
+                            <br>morph0 "grain pitch" 2500 1
+                            <span class="comment"># Morphs the grain synth pitch values 3 times between pitch
+                                transforms, at a resolution of 2500 interpolated points.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="morph0" class="command-signature">morpha "[operation]" [repeat value] [repeat duration]
+                            [interpolation cycles]
+                        </div>
+                        <div class="command-description">Morphing command for grain, geo and proc (snorm)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">operation</span> <span class="param-type">string</span>
+                                <div class="param-description">statement of the operation to execute</div>
+                                <br>
+                                <span class="param-name">repeat value</span> <span class="param-type">number</span>
+                                <div class="param-description">amount of iterations of specified operation</div>
+                                <br>
+                                <span class="param-name">repeat duration</span> <span class="param-type">string</span>
+                                <div class="param-description">duration of each repeated value</div>
+                                <br>
+                                <span class="param-name">interpolation range</span> <span
+                                    class="param-type">string</span>
+                                <div class="param-description">Number of interpolation cycles to tranistion between.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="fpic" class="command-signature">shady [options]</div>
+                        <div class="command-description">Loads an OpenGL shader in Max Jitter format (.jxs)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">vert | x | y | z | frag | rgb | mesh | run | shader</div>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">fpic read $arboreal/flocons-bleus.jpg
+                            <span class="comment"># Loads image into texture tex0</span>
+                            <br>fpic 2 read $hdri/smog6.exr
+                            <span class="comment"># Loads image into texture tex2</span>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="subsection-title">Pattern</h2>
 
                 <div class="command-block">
@@ -988,7 +1101,7 @@
                 </div>
 
                 <div class="reference-section">
-                    <h3 class="reference-title">Advanced Topics</h3>
+                    <h3 class="reference-title">Additional References </h3>
                     <ul class="reference-list">
                         <li><a href="meta-notation.html" target="_blank">Meta-Notation</a></li>
                     </ul>
