@@ -1087,34 +1087,6 @@
 
                 <div class="command-block">
                     <div class="command-header">
-                        <div id="lz" class="command-signature">lz [options]</div>
-                        <div class="command-description">Lorenz strange attractor element.</div>
-                    </div>
-                    <div class="command-body">
-                        <div class="command-params">
-                            <div class="param-item">
-                                <span class="param-name">options</span> <span class="param-type">string</span>
-                                <div class="param-description">sample | activate | mesh | anim | material | ^ | a | b |
-                                    c | dt | val | data | aio | gs | reset | iso | handle | particles | specs | .
-                                </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2e256e97cc2047f7a3c8e7aba8ef0109&pm=s"
-                                        target="_blank">nbcli.DB.lz</a></span>
-                            </div>
-                        </div>
-
-                        <h4 class="command-title">Examples</h4>
-                        <div class="code-block">lz activate 1
-                            <span class="comment"># Activates Lorenz attractor for use.</span>
-                            <br>
-                            lz sample 1<span class="comment"># Starts Lorenz simulation at default initial set
-                                conditions (same as lz ^ 10. 28. 2.667 0.001).</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-block">
-                    <div class="command-header">
                         <div id="movie" class="command-signature">movie [options]</div>
                         <div class="command-description">see <a href="#wrld">wrld</a></div>
                     </div>
@@ -1172,6 +1144,132 @@
 
                 <div class="command-block">
                     <div class="command-header">
+                        <div id="rossler" class="command-signature">rossler [options]</div>
+                        <div class="command-description">Alpha tester for Rossler strange attractor.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">sample | activate | mesh | anim | material | ^ | a | b |
+                                    c | d
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=71f9576cf33b4a75b3580639acccca7f&pm=s"
+                                        target="_blank">nbcli.DB.rossler</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">rossler activate 1
+                            <span class="comment"># Activates Rossler attractor for use.</span>
+                            <br>
+                            rossler sample 1<span class="comment"># Starts Rossler simulation at default initial set
+                                conditions.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="sketch" class="command-signature">sketch [options]</div>
+                        <div class="command-description">OpenGL drawing module.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">anim | handle
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=53623df016fd4443bfa560e3671a941e&pm=s"
+                                        target="_blank">nbcli.DB.sketch</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="typo" class="command-signature">typo [options]</div>
+                        <div class="command-description">A typography module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">text | mode | scale | fontsize | triple | anim | reset |
+                                    iso | material | mesh
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">typo text hello
+                            <span class="comment"># Prints "hello" on screen.</span>
+                            <br>
+                            typo mode 2d; typo fontsize 72<span class="comment"># Changes mode to 2D, then changes the
+                                font size to 72px.</span>
+                            <br>
+                            typo mode 3d<span class="comment"># Changes mode to 3D.</span>
+                            <br>
+                            typo scale 2 2 2<span class="comment"># Scales text to double its size in 3D <a
+                                    href="#wrld">wrld</a>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="bfg" class="command-signature">bfg [options]</div>
+                        <div class="command-description">Procedural noise generator module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">scale | weight | basis | origin | offset
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=1e2882a382724ce3bfc02bb3cb2ff0d7&pm=s"
+                                        target="_blank">nbcli.DB.bfg</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">geo material diffuse_texture bfg
+                            <span class="comment"># Adds bfg to geo object texture.</span>
+                            <br>
+                            geo material heightmap_texture bfg <span class="comment"># Adds bfg as heightmap texture to
+                                deform geo object shape.</span>
+                            <br>
+                            bfg weight 0.36 <span class="comment"># Changes the bfg weight parameter.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="sky" class="command-signature">sky [options]</div>
+                        <div class="command-description">3D skybox module.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">cubemap | anim
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=6938259589f540208deaa5e696b42714&pm=s"
+                                        target="_blank">nbcli.DB.sky</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
                         <div id="vert" class="command-signature">vert [options]
                             [interpolation cycles]
                         </div>
@@ -1186,6 +1284,33 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="biomes" class="command-signature">biomes [options]</div>
+                        <div class="command-description"><a href="#wrld">wrld</a> layer for loading biome models</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">layer | anim
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2e03d8c996da42a0b4eb67f1213eed62&pm=s"
+                                        target="_blank">nbcli.DB.biomes</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">b1 drawto biomes
+                            <span class="comment"># Adds b1 module to biomes layer.</span>
+                            <br>
+                            biomes anim turn 0 1 0<span class="comment"># Animate biomes layer rotating on y-axis. All
+                                visual modules on this layer will be animated.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1251,11 +1376,20 @@
                 </div>
 
                 <div class="reference-section">
+                    <h3 class="reference-title">o-sigv Experience </h3>
+                    <ul class="reference-list">
+                        <li><a href="https://100r.co/site/orca.html" target="_blank">Orca</a></li>
+                        <li><a href="https://github.com/nbcli-meta/o-sigv" target="_blank">o-sigv</a></li>
+                    </ul>
+                </div>
+
+                <div class="reference-section">
                     <h3 class="reference-title">Additional References </h3>
                     <ul class="reference-list">
                         <li><a href="meta-notation.html" target="_blank">Meta-Notation</a></li>
                     </ul>
                 </div>
+
             </aside>
         </div>
     </div>
