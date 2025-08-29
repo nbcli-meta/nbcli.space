@@ -990,7 +990,7 @@
 
                 <div class="command-block">
                     <div class="command-header">
-                        <div id="morph0" class="command-signature">morpha "[operation]" [repeat value] [repeat duration]
+                        <div id="morpha" class="command-signature">morpha "[operation]" [repeat value] [repeat duration]
                             [interpolation cycles]
                         </div>
                         <div class="command-description">Morphing command for grain, geo and proc (snorm)</div>
@@ -1019,7 +1019,7 @@
 
                 <div class="command-block">
                     <div class="command-header">
-                        <div id="fpic" class="command-signature">shady [options]</div>
+                        <div id="shady" class="command-signature">shady [options]</div>
                         <div class="command-description">Loads an OpenGL shader in Max Jitter format (.jxs)</div>
                     </div>
                     <div class="command-body">
@@ -1031,11 +1031,161 @@
                         </div>
 
                         <h4 class="command-title">Examples</h4>
-                        <div class="code-block">fpic read $arboreal/flocons-bleus.jpg
-                            <span class="comment"># Loads image into texture tex0</span>
-                            <br>fpic 2 read $hdri/smog6.exr
-                            <span class="comment"># Loads image into texture tex2</span>
+                        <div class="code-block">shady file myshader.jxs
+                            <span class="comment"># Loads loads shader file and renders to <a
+                                    href="#wrld">wrld</a></span>
                         </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="frag" class="command-signature">frag [options]
+                            [interpolation cycles]
+                        </div>
+                        <div class="command-description">Create fragment shader. <a href="#shady">Shady</a> shortcut to
+                            frag parameter.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">GLSL code to execute</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="lz" class="command-signature">lz [options]</div>
+                        <div class="command-description">Lorenz strange attractor element.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">sample | activate | mesh | anim | material | ^ | a | b |
+                                    c | dt | val | data | aio | gs | reset | iso | handle | particles | specs | .
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2e256e97cc2047f7a3c8e7aba8ef0109&pm=s"
+                                        target="_blank">nbcli.DB.lz</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">lz activate 1
+                            <span class="comment"># Activates Lorenz attractor for use.</span>
+                            <br>
+                            lz sample 1<span class="comment"># Starts Lorenz simulation at default initial set
+                                conditions (same as lz ^ 10. 28. 2.667 0.001).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="lz" class="command-signature">lz [options]</div>
+                        <div class="command-description">Lorenz strange attractor element.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">sample | activate | mesh | anim | material | ^ | a | b |
+                                    c | dt | val | data | aio | gs | reset | iso | handle | particles | specs | .
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2e256e97cc2047f7a3c8e7aba8ef0109&pm=s"
+                                        target="_blank">nbcli.DB.lz</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">lz activate 1
+                            <span class="comment"># Activates Lorenz attractor for use.</span>
+                            <br>
+                            lz sample 1<span class="comment"># Starts Lorenz simulation at default initial set
+                                conditions (same as lz ^ 10. 28. 2.667 0.001).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="movie" class="command-signature">movie [options]</div>
+                        <div class="command-description">see <a href="#wrld">wrld</a></div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="b1b7" class="command-signature">b1...b7 [options]</div>
+                        <div class="command-description">3D biome element.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">anim | triple | reset | iso | tex | handle | .
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=1373ac97381040b89eeebb43f0c4bb50&pm=s"
+                                        target="_blank">nbcli.DB.b1</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">b1 read $models/landscape.dae
+                            <span class="comment"># Loads a 3D model file (tested formats include .dae and .fbx).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="fx" class="command-signature">fx [options]</div>
+                        <div class="command-description">Post-processing effects in wrld (4 layers)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options (atmospheric)</span> <span
+                                    class="param-type">string</span>
+                                <div class="param-description">color | altitude | density | quality | file | drawto | .
+                                    | .. | ...
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=d7b6aa63729f4b32ba9c68001d4dbf8c&pm=s"
+                                        target="_blank">nbcli.DB.fx</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">fx density 10.
+                            <span class="comment"># Add atmospheric density to the <a href="#wrld">wrld</a>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="vert" class="command-signature">vert [options]
+                            [interpolation cycles]
+                        </div>
+                        <div class="command-description">Create frvertexagment shader. <a href="#shady">Shady</a>
+                            shortcut to vert parameter.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">GLSL code to execute</div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
