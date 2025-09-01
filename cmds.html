@@ -531,6 +531,7 @@
                         <li><a href="#vert">vert</a></li>
                         <li><a href="#biomes">biomes</a></li>
                         <li><a href="#geo">geo</a></li>
+                        <li><a href="#plato">plato</a></li>
                         <li><a href="#proc">proc</a></li>
                         <li><a href="#model">model</a></li>
                         <li><a href="#nurbs">nurbs</a></li>
@@ -541,6 +542,8 @@
                         <li><a href="#wrld">wrld</a></li>
                         <li><a href="#graph">graph</a></li>
                         <li><a href="#particles">particles</a></li>
+                        <li><a href="#terra">terra</a></li>
+                        <li><a href="#eca">eca</a></li>
                     </ul>
                 </div>
 
@@ -558,11 +561,11 @@
                         <li><a href="#rand">rand</a></li>
                         <li><a href="#randx">randx</a></li>
                         <li><a href="#automata">automata</a></li>
-                        <li><a href="#tilde">tilde</a></li>
+                        <li><a href="#tilde">tilde (~)</a></li>
                         <li><a href="#markov">markov</a></li>
                         <li><a href="#gen">gen</a></li>
                         <li><a href="#rnr">rnr</a></li>
-                        <li><a href="rsr#">rsr</a></li>
+                        <li><a href="#rsr#">rsr</a></li>
                         <li><a href="#count">count</a></li>
                         <li><a href="#sfor">sfor</a></li>
                     </ul>
@@ -572,7 +575,6 @@
                     <div class="doc-nav-section-title">Time</div>
                     <ul class="doc-nav-list">
                         <li><a href="#timer">timer</a></li>
-                        <li><a href="#clock">clock</a></li>
                     </ul>
                 </div>
             </nav>
@@ -699,35 +701,6 @@
                         <h4 class="command-title">Examples</h4>
                         <div class="code-block">o "write:H;10;22"
                             <span class="comment"># Writes the letter H at position 10,22 in Orca's grid.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="command-block">
-                    <div class="command-header">
-                        <div id="tilde" class="command-signature">tilde [options]</div>
-                        <div class="command-description">Tilde receiver connector module (accessed via tilde or ~)</div>
-                    </div>
-                    <div class="command-body">
-                        <div class="command-params">
-                            <div class="param-item">
-                                <span class="param-name">options</span> <span class="param-type">string</span>
-                                <div class="param-description">set | src | link | tail </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=64aa713d982c46d5bb229b136924a113&pm=s"
-                                        target="_blank">nbcli.DB.tilde</a></span><br>
-                                <br><span class="param-name">options:set</span> <span class="param-type">string [nbcli
-                                    operation]</span>
-                            </div>
-                        </div>
-
-                        <h4 class="command-title">Examples</h4>
-                        <div class="code-block">tilde set geo ^
-                            <span class="comment"># Attaches the transform of the geo module to the tilde connector.
-                            </span>
-                            <br>tilde src lfoc
-                            <span class="comment"># Attaches the lfo cycle stream as a source of the tilde
-                                connector.</span>
                         </div>
                     </div>
                 </div>
@@ -1392,6 +1365,31 @@
 
                 <div class="command-block">
                     <div class="command-header">
+                        <div id="plato" class="command-signature">plato [options]</div>
+                        <div class="command-description">Platonic solid geometry module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">reset | anim | triple | iso | material | gs1 | gs2 | ^ |
+                                    handle | op | export | mesh | aio | slide
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=30488621b7334b2ab69582e50cdfc589&pm=s"
+                                        target="_blank">nbcli.DB.plato</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">plato mesh draw_mode triangles
+                            <span class="comment"># Changes shape drawing to triangles.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
                         <div id="proc" class="command-signature">proc [options]</div>
                         <div class="command-description">Procedural geometry module</div>
                     </div>
@@ -1622,6 +1620,47 @@
                     </div>
                 </div>
 
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="eca" class="command-signature">eca [options]</div>
+                        <div class="command-description">1D elementary cellular automaton</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">activate | clear | metro | rule | dim | texture
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=238bd9283fa6802d907ff6de31842165&pm=s"
+                                        target="_blank">nbcli.DB.eca</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="terra" class="command-signature">terra [options]</div>
+                        <div class="command-description">Video-based procedural terrain module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">reset | coord | op | material | mesh | activate | qt |
+                                    anim | aio | gs
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=9b757d4abe934385b02c3f0629dbebe8&pm=s"
+                                        target="_blank">nbcli.DB.terra</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <h2 class="subsection-title">Kinetic</h2>
 
                 <div class="command-block">
@@ -1735,6 +1774,196 @@
                         <h4 class="command-title">Examples</h4>
                         <div class="code-block">automata "rand 50" 2
                             <span class="comment"># Generates a number that's between 0 and 50 every 2 seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="tilde" class="command-signature">tilde [options]</div>
+                        <div class="command-description">Tilde receiver connector module (accessed via tilde or ~)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">set | src | link | tail </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=64aa713d982c46d5bb229b136924a113&pm=s"
+                                        target="_blank">nbcli.DB.tilde</a></span><br>
+                                <br><span class="param-name">options:set</span> <span class="param-type">string [nbcli
+                                    operation]</span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">tilde set geo ^
+                            <span class="comment"># Attaches the transform of the geo module to the tilde connector.
+                            </span>
+                            <br>tilde src lfoc
+                            <span class="comment"># Attaches the lfo cycle stream as a source of the tilde
+                                connector.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="markov" class="command-signature">markov [options]</div>
+                        <div class="command-description">Markov machine learning module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">operation</span> <span class="param-type">string</span>
+                                <div class="param-description">activate | build | dump | reset | order | target</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=8f46ea2b33244d48baba56556705702b&pm=s"
+                                        target="_blank">nbcli.DB.markov</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="gen" class="command-signature">gen [start value] [iteration value] [end value]
+                            [duration] [operation]</div>
+                        <div class="command-description">Main number generator based on Bash <a
+                                href="https://man.openbsd.org/seq.1" target="_blank">seq</a> command
+                        </div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">start value</span> <span class="param-type">number (int or
+                                    float)</span>
+                                <div class="param-description">Starting sequence number.</div>
+                                <br>
+                                <span class="param-name">iteration value</span> <span class="param-type">number (int or
+                                    float)</span>
+                                <div class="param-description">Iteration amount.</div>
+                                <br>
+                                <span class="param-name">end value</span> <span class="param-type">number (int or
+                                    float)</span>
+                                <div class="param-description">Ending sequence number.</div>
+                                <br>
+                                <span class="param-name">duration</span> <span class="param-type">number (int or
+                                    float)</span>
+                                <div class="param-description">Length of every iteration of sequence.</div>
+                                <br>
+                                <span class="param-name">operation</span> <span class="param-type">string</span>
+                                <div class="param-description">Operation to sequence.</div>
+
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=dfd016bb7cf0417e84cac61544423698&pm=s"
+                                        target="_blank">nbcli.DB.gen</a></span>
+                            </div>
+                            <h4 class="command-title">Examples</h4>
+                            <div class="code-block">gen 0. 0.1 1 0.5 "hello"
+                                <span class="comment"># Generates a sequence of strings of "hello" once every half
+                                    second, up to to 10 (10 points in 0.0 to 1.0 range).</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="rnr" class="command-signature">rnr [value]</div>
+                        <div class="command-description">Random float number list generator (0 to 1)
+                        </div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">value</span> <span class="param-type">number (float)</span>
+                                <div class="param-description">Number of random float results to be printed</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=49334c582741470b9951e749b9675710&pm=s"
+                                        target="_blank">nbcli.DB.rnr</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">rnr 1
+                            <span class="comment"># Generates a random float value between 0. and 1.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="rsr" class="command-signature">rsr [value]</div>
+                        <div class="command-description">Random float number list generator (-1 to 1)
+                        </div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">value</span> <span class="param-type">number (float)</span>
+                                <div class="param-description">Number of random float results to be printed</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=43ace8986cfe4efabab07bf62393403a&pm=s"
+                                        target="_blank">nbcli.DB.rsr</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">rsr 1
+                            <span class="comment"># Generates a random float value between -1. and 1.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="count" class="command-signature">count [value]</div>
+                        <div class="command-description">Audible counter
+                        </div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">value</span> <span class="param-type">number (int)</span>
+                                <div class="param-description">Number to count to.</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=a1088d17f0ec4d74ae6949bc926755c9&pm=s"
+                                        target="_blank">nbcli.DB.count</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">count 12
+                            <span class="comment"># Counts to 12 out loud (macOS only).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="sfor" class="command-signature">sfor [limit value] "[operation]" [duration]</div>
+                        <div class="command-description">C-style loop
+                        </div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">limit value</span> <span class="param-type">number (int)</span>
+                                <div class="param-description">Loop maximum</div>
+                                <br>
+                                <span class="param-name">operation</span> <span class="param-type">number (int)</span>
+                                <div class="param-description">Loop maximum</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=100b0bb72d76413f83301e2c41c43ffb&pm=s"
+                                        target="_blank">nbcli.DB.sfor</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">sfor 5 "rsr 1" 1
+                            <span class="comment"># Generates an unsigned (-1. 1.) floating number, every second until
+                                the loop prints 5 of them.</span>
                         </div>
                     </div>
                 </div>
