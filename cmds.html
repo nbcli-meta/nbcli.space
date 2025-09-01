@@ -290,7 +290,7 @@
         /* Code Examples */
         .code-block {
             background: hsla(214, 50%, 5%, 0.257);
-            border: 1px solid rgba(0, 191, 255, 0.2);
+            border: 1px solid rgba(51, 86, 167, 0.233);
             border-radius: 4px;
             padding: 1.5rem;
             margin: 1rem 0;
@@ -682,7 +682,7 @@
 
                 <div class="command-block">
                     <div class="command-header">
-                        <div id="s" class="command-signature">o [options]</div>
+                        <div id="o" class="command-signature">o [options]</div>
                         <div class="command-description">Orca osc send utility</div>
                     </div>
                     <div class="command-body">
@@ -1417,7 +1417,231 @@
                     </div>
                 </div>
 
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="model" class="command-signature">model [options]</div>
+                        <div class="command-description">3D model module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">handle | iso |
+                                    material | mesh | anim | . | tex
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=175ea17ebec44f769d308375b95655eb&pm=s"
+                                        target="_blank">nbcli.DB.model</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="nurbs" class="command-signature">nurbs [options]</div>
+                        <div class="command-description">NURBS surface module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">anim | triple | reset | iso | handle | surf
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=a480c60fd39c44fa82747b6b32aa0346&pm=s"
+                                        target="_blank">nbcli.DB.nurbs</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="som" class="command-signature">som [options]</div>
+                        <div class="command-description">Module for self-organizing machine learning</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">activate | q | gen | texture
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=f455a5fe9b3447b0a206c6423f7d9e14&pm=s"
+                                        target="_blank">nbcli.DB.som</a></span>
+                                <br><br>
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">
+                                    size (int) | neighbourhood (int) | learning (float) | plasticity (float)
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">som 32 14 0.05 0.
+                            <span class="comment"># Sets parameter values for a self-organizing map.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="camera" class="command-signature">camera [options]</div>
+                        <div class="command-description">Camera control command in <a href="#wrld">wrld</a></div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">anim | c | t
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=1513faa2724b48c4ba3df0eeff632d2f&pm=s"
+                                        target="_blank">nbcli.DB.camera</a></span>
+                                <br>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">camera position 0 0 4
+                            <span class="comment"># Default position of camera on load of wrld.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="monde" class="command-signature">monde [options]</div>
+                        <div class="command-description">Main <a href="#wrld">wrld</a> layer.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">anim
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=6f30c35bef7d40a3b15b0703f09a35df&pm=s"
+                                        target="_blank">nbcli.DB.monde</a></span>
+                                <br>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">monde anim turn 0 0.5 0
+                            <span class="comment"># Rotation of the wrld on y-axis.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="specs" class="command-signature">specs [options]</div>
+                        <div class="command-description">Specifications text module.</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">pk | bf | mk | enable
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=c69f72e623f04c9ba88323c95a827c3f&pm=s"
+                                        target="_blank">nbcli.DB.specs</a></span>
+                                <br>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="wrld" class="command-signature">wrld [options]</div>
+                        <div class="command-description">3D world context module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">visible | enable | size | dim | windowposition
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=21c9d3d36aa2499bae42a3486cfc3ec2&pm=s"
+                                        target="_blank">nbcli.DB.wrld</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">new wrld 0 0 wrld; wrld size 400 400; wrld dim 400 400
+                            <span class="comment"># Loads wrld module with a 400 x 400 window view.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="graph" class="command-signature">graph [options]</div>
+                        <div class="command-description">Graph plot module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">~ | val
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ce9e7790f5c84709a7090b1d14c2f68a&pm=s"
+                                        target="_blank">nbcli.DB.graph</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="particles" class="command-signature">particles [options]</div>
+                        <div class="command-description">Basic particle system module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">dim | reset | mesh | material | shape
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=3fc6c1e4e5b64bfb90ec7b7923e6e630&pm=s"
+                                        target="_blank">nbcli.DB.particles</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <h2 class="subsection-title">Kinetic</h2>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="cv" class="command-signature">cv [options]</div>
+                        <div class="command-description">I/O control voltages via <a href="#aio">aio</a> module</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">options</span> <span class="param-type">string</span>
+                                <div class="param-description">tap | bpm | rate | pitch | osci | zero | pwr
+                                </div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ceb581f8eee8472b9052e3ea92e7cf4f&pm=s"
+                                        target="_blank">nbcli.DB.cv</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="command-block">
                     <div class="command-header">
@@ -1462,6 +1686,55 @@
                         <h4 class="command-title">Examples</h4>
                         <div class="code-block">rand 200
                             <span class="comment"># Generates a number that's between 0 and 200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="randx" class="command-signature">randx [value a] [value b]</div>
+                        <div class="command-description">Generate random number generator (integer range a b)</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">value a</span> <span class="param-type">number</span>
+                                <div class="param-description">Minimum number range.</div>
+                                <br>
+                                <span class="param-name">value b</span> <span class="param-type">number</span>
+                                <div class="param-description">Maximum number range.</div>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">randx 10 25
+                            <span class="comment"># Generates a number that's between 10 and 25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-block">
+                    <div class="command-header">
+                        <div id="automata" class="command-signature">automata "[operation]" [duration]</div>
+                        <div class="command-description">Infinite pattern repeater</div>
+                    </div>
+                    <div class="command-body">
+                        <div class="command-params">
+                            <div class="param-item">
+                                <span class="param-name">operation</span> <span class="param-type">string</span>
+                                <div class="param-description">Operation to be repeated</div>
+                                <br>
+                                <span class="param-name">duration</span> <span class="param-type">number</span>
+                                <div class="param-description">Time of each repetition.</div>
+                                <br><span class="param-type"><a
+                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ab4da2cfe7154098b33709a5571fc46d&pm=s"
+                                        target="_blank">nbcli.DB.automata</a></span>
+                            </div>
+                        </div>
+
+                        <h4 class="command-title">Examples</h4>
+                        <div class="code-block">automata "rand 50" 2
+                            <span class="comment"># Generates a number that's between 0 and 50 every 2 seconds</span>
                         </div>
                     </div>
                 </div>
