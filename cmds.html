@@ -454,6 +454,77 @@
             font-size: 0.6em;
             vertical-align: sub;
         }
+
+
+        /* lumo */
+        /* -------------------------------------------------
+        Sticky header styling 
+        ------------------------------------------------- */
+
+        /* All heading levels you want to stick */
+        .doc-nav-section-title {
+            /* Make the element behave like a sticky container */
+            position: -webkit-sticky;
+            /* Safari support */
+            position: sticky;
+            top: 0;
+            /* Stick to the very top */
+
+            /* Prevent underlying content from showing through */
+            z-index: 10;
+
+            /* If you have a fixed site‑wide navbar, offset the sticky headings */
+            body.has-fixed-navbar .doc-nav-section-title {
+                top: 60px;
+                /* Adjust to match your navbar height */
+            }
+        }
+
+        /* -------------------------------------------------
+        Layout – sidebar + main content
+        ------------------------------------------------- */
+        .main-content {
+            display: flex;
+            /* side‑by‑side layout */
+        }
+
+        /* -----------------------------------------------------------------
+        Sidebar – hidden overflow by default, scrollable on hover
+        ----------------------------------------------------------------- */
+        .doc-nav {
+            width: 260px;
+            /* adjust to your design */
+            max-height: 100vh;
+            /* fill the viewport vertically */
+            overflow-y: hidden;
+            /* hide scrollbars initially */
+            transition: overflow-y .2s ease-in-out;
+        }
+
+        /* Show scrollbars when the user hovers over the sidebar */
+        .doc-nav:hover {
+            overflow-y: auto;
+            /* enable native scrolling */
+        }
+
+        /* Optional: give a subtle visual cue that the area is scrollable */
+        .doc-nav::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .doc-nav::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .2);
+            border-radius: 3px;
+        }
+
+        /* -----------------------------------------------------------------
+        Main content – take remaining space
+        ----------------------------------------------------------------- */
+        .content-area {
+            flex: 1;
+            /* fill the rest of the row */
+            padding: 1rem;
+        }
     </style>
     <link rel="stylesheet" href="global.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
@@ -2041,6 +2112,8 @@
                 <div class="reference-section">
                     <h3 class="reference-title">Additional References </h3>
                     <ul class="reference-list">
+                        <li><a href="https://www.are.na/marcus-gordon/nbcli-gallery" target="_blank">nbcli Gallery (on
+                                Are.na)</a></li>
                         <li><a href="meta-notation.html" target="_blank">Meta-Notation</a></li>
                     </ul>
                 </div>
