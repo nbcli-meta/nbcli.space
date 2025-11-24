@@ -5,8 +5,10 @@
 -->
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <meta name="description" content="nbcli meta-instrument" />
+    <meta name="author" content="magfoto" />
     <title>
         nbcli commands
     </title>
@@ -19,10 +21,21 @@
 
         body {
             font-family: 'Avenir Next', 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background: rgba(29, 30, 35, 1);
-            color: rgba(134, 153, 169, 1);
+            background: #fff;
+            color: rgba(30, 30, 30, 0.696);
             overflow-x: hidden;
             line-height: 1.6;
+        }
+
+        a {
+            color: black;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        a:focus,
+        a:hover {
+            color: slategray;
         }
 
         /* Animated background grid */
@@ -34,8 +47,8 @@
             height: 100%;
             opacity: 0.05;
             background-image:
-                linear-gradient(rgba(0, 191, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 191, 255, 0.1) 1px, transparent 1px);
+                linear-gradient(rgba(22, 24, 26, , 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(22, 24, 26, , 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
             z-index: -1;
@@ -66,7 +79,6 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1.5rem 0;
-            background: rgba(29, 30, 35, 0.9);
             backdrop-filter: blur(10px);
         }
 
@@ -78,7 +90,7 @@
 
         .logo-title {
             font-size: 1.8rem;
-            color: hsla(200, 50%, 60%, 1);
+            color: rgb(22, 24, 26);
             font-weight: 300;
             letter-spacing: 2px;
             text-decoration: none;
@@ -101,7 +113,7 @@
             padding: 0.5rem 1rem;
             border: 1px solid transparent;
             background: transparent;
-            color: rgba(134, 153, 169, 0.8);
+            color: rgba(30, 30, 30, 0.8);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 400;
@@ -110,13 +122,12 @@
         }
 
         .mini-nav-item:hover {
-            border-color: rgba(0, 191, 255, 0.6);
-            color: rgba(0, 191, 255, 0.8);
+            color: slategray;
         }
 
         .mini-nav-item.active {
-            color: hsla(200, 50%, 60%, 1);
-            border-color: rgba(0, 191, 255, 0.4);
+            color: rgba(22, 24, 26, 1);
+            border-color: rgba(22, 24, 26, , 0.4);
         }
 
         /* Three-Column Layout for Documentation */
@@ -128,7 +139,6 @@
         }
 
         .doc-nav {
-            background: rgba(29, 30, 35, 0.4);
             padding: 1.5rem;
             border-radius: 4px;
             height: fit-content;
@@ -137,14 +147,12 @@
         }
 
         .content-area {
-            background: rgba(29, 30, 35, 0.6);
             padding: 2rem;
             border-radius: 4px;
             min-height: 800px;
         }
 
         .reference-sidebar {
-            background: rgba(29, 30, 35, 0.4);
             padding: 1.5rem;
             border-radius: 4px;
             height: fit-content;
@@ -155,7 +163,7 @@
         /* Documentation Navigation */
         .doc-nav-title {
             font-size: 1.1rem;
-            color: hsla(200, 50%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             margin-bottom: 1rem;
             font-weight: 500;
         }
@@ -166,7 +174,7 @@
 
         .doc-nav-section-title {
             font-size: 0.9rem;
-            color: rgba(134, 153, 169, 0.8);
+            color: rgba(30, 30, 30, 0.8);
             margin-bottom: 0.5rem;
             font-weight: 500;
             text-transform: uppercase;
@@ -183,7 +191,6 @@
         }
 
         .doc-nav-list a {
-            color: rgba(134, 153, 169, 0.7);
             text-decoration: none;
             font-size: 0.85rem;
             transition: color 0.3s ease;
@@ -193,13 +200,13 @@
 
         .doc-nav-list a:hover,
         .doc-nav-list a.active {
-            color: rgba(0, 191, 255, 0.8);
+            color: slategray;
         }
 
         /* Typography */
         .section-title {
             font-size: 2rem;
-            color: hsla(200, 50%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             margin-bottom: 1.5rem;
             font-weight: 300;
             letter-spacing: 1px;
@@ -207,16 +214,16 @@
 
         .subsection-title {
             font-size: 1.4rem;
-            color: hsla(200, 50%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             margin: 2rem 0 1rem 0;
             font-weight: 400;
-            border-bottom: 1px solid rgba(134, 153, 169, 0.2);
+            border-bottom: 1px solid rgba(30, 30, 30, 0.2);
             padding-bottom: 0.5rem;
         }
 
         .command-title {
             font-size: 1.1rem;
-            color: hsla(200, 50%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             margin: 1.5rem 0 0.5rem 0;
             font-weight: 500;
         }
@@ -229,15 +236,14 @@
 
         /* Command Documentation Styles */
         .command-block {
-            background: rgba(29, 30, 35, 0.8);
-            border: 1px solid hsla(200, 100%, 80%, 0.2);
+            border: 1px solid slategray;
             border-radius: 4px;
             margin: 1rem 0;
             overflow: hidden;
         }
 
         .command-header {
-            background: hsla(211, 78%, 42%, 0.267);
+            background: #ddd;
             padding: 1rem 1.5rem;
             border-bottom: 1px solid hsla(200, 100%, 80%, 0.2);
         }
@@ -245,7 +251,7 @@
         .command-signature {
             font-family: 'Courier New', monospace;
             font-size: 1rem;
-            color: hsla(200, 100%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             font-weight: 500;
         }
 
@@ -270,13 +276,13 @@
 
         .param-name {
             font-family: 'Courier New', monospace;
-            color: rgba(0, 191, 255, 0.8);
+            color: rgba(22, 24, 26, , 0.8);
             font-weight: 500;
             font-size: 0.9rem;
         }
 
         .param-type {
-            color: rgba(134, 153, 169, 0.6);
+            color: rgba(30, 30, 30, 0.6);
             font-size: 0.8rem;
             font-style: italic;
         }
@@ -289,30 +295,30 @@
 
         /* Code Examples */
         .code-block {
-            background: hsla(214, 50%, 5%, 0.257);
+            /* background: hsla(214, 50%, 5%, 0.257); */
             border: 1px solid rgba(51, 86, 167, 0.233);
             border-radius: 4px;
             padding: 1.5rem;
             margin: 1rem 0;
             font-family: 'Courier New', monospace;
             font-size: 0.9rem;
-            color: hsla(200, 100%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             overflow-x: auto;
         }
 
         .code-block .comment {
-            color: rgba(134, 153, 169, 0.6);
+            color: rgba(30, 30, 30, 0.6);
             font-style: italic;
         }
 
         .code-block .output {
-            color: rgba(134, 153, 169, 0.8);
+            color: rgba(30, 30, 30, 0.8);
             opacity: 0.7;
         }
 
         .code-inline {
             background: hsla(215, 100%, 80%, 0.1);
-            color: hsla(200, 100%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             padding: 0.2rem 0.5rem;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
@@ -322,7 +328,7 @@
         /* Reference Sidebar */
         .reference-title {
             font-size: 1.1rem;
-            color: hsla(200, 50%, 60%, 1);
+            color: rgba(22, 24, 26, 1);
             margin-bottom: 1rem;
             font-weight: 500;
         }
@@ -341,13 +347,12 @@
         }
 
         .reference-list a {
-            color: rgba(0, 191, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .reference-list a:hover {
-            color: rgba(30, 144, 255, 0.8);
+            color: slategray;
         }
 
         /* Search Box */
@@ -357,9 +362,8 @@
 
         .search-input {
             width: 100%;
-            background: rgba(29, 30, 35, 0.8);
-            border: 1px solid rgba(0, 191, 255, 0.3);
-            color: rgba(134, 153, 169, 1);
+            border: 1px solid rgba(22, 24, 26, , 0.3);
+            color: rgba(30, 30, 30, 1);
             padding: 0.8rem;
             border-radius: 4px;
             font-family: inherit;
@@ -368,12 +372,12 @@
 
         .search-input:focus {
             outline: none;
-            border-color: rgba(0, 191, 255, 0.8);
-            box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+            border-color: rgba(22, 24, 26, , 0.8);
+            box-shadow: 0 0 10px rgba(22, 24, 26, , 0.2);
         }
 
         .search-input::placeholder {
-            color: rgba(134, 153, 169, 0.5);
+            color: rgba(30, 30, 30, 0.5);
         }
 
         /* Status indicator */
@@ -382,8 +386,7 @@
             bottom: 2rem;
             right: 2rem;
             padding: 0.5rem 1rem;
-            border: 1px solid rgba(0, 191, 255, 0.6);
-            background: rgba(29, 30, 35, 0.9);
+            border: 1px solid rgba(22, 24, 26, , 0.6);
             font-size: 0.8rem;
         }
 
@@ -391,7 +394,7 @@
             display: inline-block;
             width: 8px;
             height: 8px;
-            background: rgba(0, 191, 255, 0.8);
+            background: rgba(22, 24, 26, , 0.8);
             border-radius: 50%;
             margin-right: 0.5rem;
             animation: blink 1s infinite;
@@ -441,10 +444,10 @@
 
         .transform-buffer {
             font-size: 0.8em;
-            stroke: hsla(215, 100%, 80%, 0.5);
+            stroke: black;
             fill: none;
-            color: lightblue;
-            border: 1.5px solid hsla(215, 100%, 80%, 0.5);
+            color: black;
+            border: 1.5px solid black;
             border-radius: 4px;
             padding: 0.1em 0.3em;
             background: none;
@@ -526,7 +529,6 @@
             padding: 1rem;
         }
     </style>
-    <link rel="stylesheet" href="global.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
     <!-- and it's easy to individually load additional languages -->
@@ -539,34 +541,6 @@
     <div class="bg-grid">
     </div>
     <div class="container">
-        <div class="center measure-wide">
-            <section class="pa3 pa4-m pa5-l">
-                <a href="index.html" class="f5 link dim br2 ph3 pv2 mb2 dib white bg-near-black dib grow">
-                    <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
-                        <title>chevronLeft icon</title>
-                        <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
-                    </svg>
-                </a>
-                <a href="research.html" class="f5 link dim br2 ph3 pv2 mb2 dib white bg lblue dib grow">
-                    Research
-                </a>
-                <a href="https://github.com/nbcli-meta/nbcli"
-                    class="f5 link dim br2 ph3 pv2 mb2 dib white lblue dib grow" target="_blank">
-                    Install
-                </a>
-                <a href="meta-notation.html" class="f5 link dim br2 ph3 pv2 mb2 dib white lblue dib grow"
-                    target="_blank">
-                    Notation
-                </a>
-                <a href="cmds.html" class="f5 link dim br2 ph3 pv2 mb2 dib light-blue  dib grow">
-                    Commands
-                </a>
-                <a href="https://magfoto.itch.io/sigv" class="f5 link dim br2 ph3 pv2 mb2 dib white bluegel dib grow"
-                    target="_blank">
-                    Download sigv
-                </a>
-            </section>
-        </div>
         <div class="main-content">
             <nav class="doc-nav">
                 <h3 class="doc-nav-title">Commands</h3>
@@ -673,10 +647,9 @@
                 <h1 class="section-title">Command Reference</h1>
 
                 <p class="content-paragraph">
-                    Reference for nbcli commands. For more
-                    detailed info, checkout the <a
-                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33"
-                        target="_blank">nbcli commands database</a>. If you are just getting started, please go the <a
+                    This is the reference for nbcli commands. For more
+                    detailed info, checkout the <a href="https://magfoto.any.org/kb" target="_blank">nbcli commands
+                        knowledge base</a>. If you are just getting started, please go the <a
                         href="https://github.com/nbcli-meta/nbcli" target="_blank">nbcli Github repo</a> for
                     installation instructions and demo code examples.
                 </p>
@@ -688,13 +661,6 @@
                     Sound Control) messages. Follow instructions on the <a href="https://github.com/nbcli-meta/o-sigv"
                         target="_blank">o-sigv</a> repo for using <a href="https://100r.co/site/orca.html"
                         target="_blank">Orca</a> (desktop or Electron versions) with the modules.
-                </p>
-
-                <p class="content-paragraph">
-                    Videos of experiments in live coding with nbcli and modular synthesizers, visual experiments with
-                    and without sound, and performances with the Endemics Collective can be seen <a
-                        href="https://youtube.com/playlist?list=PLBCmF6CXYUwYCK6adqH1kZFSL2HdPB3fW&si=9ievgpi790_yjTf3"
-                        target="_blank">here</a>.
                 </p>
 
                 <h2 class="subsection-title">Core</h2>
@@ -807,9 +773,8 @@
                             <div class="param-item">
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">activate | sigx | sigy | sig | phase | pwr</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ef13fe742f414c3aade3c7d57bd63cbf&pm=s"
-                                        target="_blank">nbcli.DB.aio</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/aio"
+                                        target="_blank">nbcli.kb.aio</a></span>
                             </div>
                         </div>
 
@@ -831,9 +796,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">sub | ch | metro | activate | slider | close | port | pos
                                     | drunk</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ea5dd482514f4659bfeb426369309dee&pm=s"
-                                        target="_blank">nbcli.DB.lttp</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/lttp"
+                                        target="_blank">nbcli.kb.lttp</a></span>
                             </div>
                         </div>
 
@@ -857,9 +821,8 @@
                             <div class="param-item">
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">bi | mult | peak | mode | sense</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=784eeaf751ad441ab249c3a834c2418f&pm=s"
-                                        target="_blank">nbcli.DB.nature</a></span><br>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/nature"
+                                        target="_blank">nbcli.kb.nature</a></span><br>
                                 <br><span class="param-name">options:mode</span> <span class="param-type">morph turn
                                     group tex bloom line</span>
                             </div>
@@ -887,9 +850,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">vol | vst1 | vst2 | vst3 | vst4 | inport | outport | note
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=8a7ae8324f86415abea3ca26bf4aab4c&pm=s"
-                                        target="_blank">nbcli.DB.midi</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/midi"
+                                        target="_blank">nbcli.kb.midi</a></span>
                             </div>
                             <div class="param-item">
                                 <span class="param-description">Note param mostly used for sending a single note
@@ -917,9 +879,8 @@
                                 <div class="param-description">activate | metro | buffer | freq | start | end | env |
                                     vol
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2a9fbf0ca12747c4a55c388285cf1923&pm=s"
-                                        target="_blank">nbcli.DB.wave</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/wave"
+                                        target="_blank">nbcli.kb.wave</a></span>
                             </div>
                         </div>
 
@@ -943,9 +904,8 @@
                                 <div class="param-description">activate | metro | buffer | freq | start | end | env |
                                     vol
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=d286f80450504e8cbe67eedad4ba0d91&pm=s"
-                                        target="_blank">nbcli.DB.grain</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/grain"
+                                        target="_blank">nbcli.kb.grain</a></span>
                             </div>
                         </div>
 
@@ -973,9 +933,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">play
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=be06fdcb3e004653b8d76cd857257e7b&pm=s"
-                                        target="_blank">nbcli.DB.spk</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/spk"
+                                        target="_blank">nbcli.kb.spk</a></span>
                             </div>
                         </div>
 
@@ -998,9 +957,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">tri | cycle | saw | rect | amp
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ca0965a330bc4f869692378419581182&pm=s"
-                                        target="_blank">nbcli.DB.synth</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/synth"
+                                        target="_blank">nbcli.kb.synth</a></span>
                             </div>
                         </div>
 
@@ -1179,9 +1137,8 @@
                                 <div class="param-description">sample | activate | mesh | anim | material | ^ | a | b |
                                     c | dt | val | data | aio | gs | reset | iso | handle | particles | specs | .
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2e256e97cc2047f7a3c8e7aba8ef0109&pm=s"
-                                        target="_blank">nbcli.DB.lz</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/lz"
+                                        target="_blank">nbcli.kb.lz</a></span>
                             </div>
                         </div>
 
@@ -1213,9 +1170,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">anim | triple | reset | iso | tex | handle | .
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=1373ac97381040b89eeebb43f0c4bb50&pm=s"
-                                        target="_blank">nbcli.DB.b1</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/b1"
+                                        target="_blank">nbcli.kb.b1</a></span>
                             </div>
                         </div>
 
@@ -1239,9 +1195,8 @@
                                 <div class="param-description">color | altitude | density | quality | file | drawto | .
                                     | .. | ...
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=d7b6aa63729f4b32ba9c68001d4dbf8c&pm=s"
-                                        target="_blank">nbcli.DB.fx</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/fx"
+                                        target="_blank">nbcli.kb.fx</a></span>
                             </div>
                         </div>
 
@@ -1264,9 +1219,8 @@
                                 <div class="param-description">sample | activate | mesh | anim | material | ^ | a | b |
                                     c | d
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=71f9576cf33b4a75b3580639acccca7f&pm=s"
-                                        target="_blank">nbcli.DB.rossler</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/rossler"
+                                        target="_blank">nbcli.kb.rossler</a></span>
                             </div>
                         </div>
 
@@ -1291,9 +1245,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">anim | handle
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=53623df016fd4443bfa560e3671a941e&pm=s"
-                                        target="_blank">nbcli.DB.sketch</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/sketch"
+                                        target="_blank">nbcli.kb.sketch</a></span>
                             </div>
                         </div>
 
@@ -1341,9 +1294,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">scale | weight | basis | origin | offset
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=1e2882a382724ce3bfc02bb3cb2ff0d7&pm=s"
-                                        target="_blank">nbcli.DB.bfg</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/bfg"
+                                        target="_blank">nbcli.kb.bfg</a></span>
                             </div>
                         </div>
 
@@ -1370,9 +1322,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">cubemap | anim
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=6938259589f540208deaa5e696b42714&pm=s"
-                                        target="_blank">nbcli.DB.sky</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/sky"
+                                        target="_blank">nbcli.kb.sky</a></span>
                             </div>
                         </div>
                     </div>
@@ -1408,9 +1359,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">layer | anim
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=2e03d8c996da42a0b4eb67f1213eed62&pm=s"
-                                        target="_blank">nbcli.DB.biomes</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/biomes"
+                                        target="_blank">nbcli.kb.biomes</a></span>
                             </div>
                         </div>
 
@@ -1436,9 +1386,8 @@
                                 <div class="param-description">reset | anim | triple | iso | material | gs1 | gs2 | ^ |
                                     handle | op | export | mesh | aio | vo | slide
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=86e17adc823e4241af305190fca8bf8c&pm=s"
-                                        target="_blank">nbcli.DB.geo</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/geo"
+                                        target="_blank">nbcli.kb.geo</a></span>
                             </div>
                         </div>
 
@@ -1468,9 +1417,8 @@
                                 <div class="param-description">reset | anim | triple | iso | material | gs1 | gs2 | ^ |
                                     handle | op | export | mesh | aio | slide
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=30488621b7334b2ab69582e50cdfc589&pm=s"
-                                        target="_blank">nbcli.DB.plato</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/plato"
+                                        target="_blank">nbcli.kb.plato</a></span>
                             </div>
                         </div>
 
@@ -1493,9 +1441,8 @@
                                 <div class="param-description">gs | clocker | scale | period | time | bfg | slide |
                                     material | mesh | anim | aio | mult
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=4484031c995743c99dd4eff189dbae8a&pm=s"
-                                        target="_blank">nbcli.DB.proc</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/proc"
+                                        target="_blank">nbcli.kb.proc</a></span>
                             </div>
                         </div>
 
@@ -1520,9 +1467,8 @@
                                 <div class="param-description">handle | iso |
                                     material | mesh | anim | . | tex
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=175ea17ebec44f769d308375b95655eb&pm=s"
-                                        target="_blank">nbcli.DB.model</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/model"
+                                        target="_blank">nbcli.kb.model</a></span>
                             </div>
                         </div>
 
@@ -1540,9 +1486,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">anim | triple | reset | iso | handle | surf
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=a480c60fd39c44fa82747b6b32aa0346&pm=s"
-                                        target="_blank">nbcli.DB.nurbs</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/nurbs"
+                                        target="_blank">nbcli.kb.nurbs</a></span>
                             </div>
                         </div>
 
@@ -1560,9 +1505,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">activate | q | gen | texture
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=f455a5fe9b3447b0a206c6423f7d9e14&pm=s"
-                                        target="_blank">nbcli.DB.som</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/som"
+                                        target="_blank">nbcli.kb.som</a></span>
                                 <br><br>
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">
@@ -1589,9 +1533,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">anim | c | t
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=1513faa2724b48c4ba3df0eeff632d2f&pm=s"
-                                        target="_blank">nbcli.DB.camera</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/camera"
+                                        target="_blank">nbcli.kb.camera</a></span>
                                 <br>
                             </div>
                         </div>
@@ -1614,9 +1557,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">anim
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=6f30c35bef7d40a3b15b0703f09a35df&pm=s"
-                                        target="_blank">nbcli.DB.monde</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/monde"
+                                        target="_blank">nbcli.kb.monde</a></span>
                                 <br>
                             </div>
                         </div>
@@ -1639,9 +1581,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">pk | bf | mk | enable
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=c69f72e623f04c9ba88323c95a827c3f&pm=s"
-                                        target="_blank">nbcli.DB.specs</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/specs"
+                                        target="_blank">nbcli.kb.specs</a></span>
                                 <br>
                             </div>
                         </div>
@@ -1660,9 +1601,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">visible | enable | size | dim | windowposition
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=21c9d3d36aa2499bae42a3486cfc3ec2&pm=s"
-                                        target="_blank">nbcli.DB.wrld</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/wrld"
+                                        target="_blank">nbcli.kb.wrld</a></span>
                             </div>
                         </div>
 
@@ -1684,9 +1624,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">~ | val
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ce9e7790f5c84709a7090b1d14c2f68a&pm=s"
-                                        target="_blank">nbcli.DB.graph</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/graph"
+                                        target="_blank">nbcli.kb.graph</a></span>
                             </div>
                         </div>
 
@@ -1704,9 +1643,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">dim | reset | mesh | material | shape
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=3fc6c1e4e5b64bfb90ec7b7923e6e630&pm=s"
-                                        target="_blank">nbcli.DB.particles</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/particles"
+                                        target="_blank">nbcli.kb.particles</a></span>
                             </div>
                         </div>
 
@@ -1724,9 +1662,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">activate | clear | metro | rule | dim | texture
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=238bd9283fa6802d907ff6de31842165&pm=s"
-                                        target="_blank">nbcli.DB.eca</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/eca"
+                                        target="_blank">nbcli.kb.eca</a></span>
                             </div>
                         </div>
 
@@ -1745,9 +1682,8 @@
                                 <div class="param-description">reset | coord | op | material | mesh | activate | qt |
                                     anim | aio | gs
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=9b757d4abe934385b02c3f0629dbebe8&pm=s"
-                                        target="_blank">nbcli.DB.terra</a></span>
+                                <br><span class="param-type"><a href="hhttps://magfoto.any.org/terra"
+                                        target="_blank">nbcli.kb.terra</a></span>
                             </div>
                         </div>
 
@@ -1767,9 +1703,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">tap | bpm | rate | pitch | osci | zero | pwr
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ceb581f8eee8472b9052e3ea92e7cf4f&pm=s"
-                                        target="_blank">nbcli.DB.cv</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/cv"
+                                        target="_blank">nbcli.kb.cv</a></span>
                             </div>
                         </div>
                     </div>
@@ -1786,9 +1721,8 @@
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">cycle | tri | saw | rect
                                 </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=c5bba05bc1f4480b8aa7270a80d9eda2&pm=s"
-                                        target="_blank">nbcli.DB.lfo</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/lfo"
+                                        target="_blank">nbcli.kb.lfo</a></span>
                             </div>
                         </div>
 
@@ -1858,9 +1792,8 @@
                                 <br>
                                 <span class="param-name">duration</span> <span class="param-type">number</span>
                                 <div class="param-description">Time of each repetition.</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=ab4da2cfe7154098b33709a5571fc46d&pm=s"
-                                        target="_blank">nbcli.DB.automata</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/automata"
+                                        target="_blank">nbcli.kb.automata</a></span>
                             </div>
                         </div>
 
@@ -1881,9 +1814,8 @@
                             <div class="param-item">
                                 <span class="param-name">options</span> <span class="param-type">string</span>
                                 <div class="param-description">set | src | link | tail </div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=64aa713d982c46d5bb229b136924a113&pm=s"
-                                        target="_blank">nbcli.DB.tilde</a></span><br>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/tilde"
+                                        target="_blank">nbcli.kb.tilde</a></span><br>
                                 <br><span class="param-name">options:set</span> <span class="param-type">string [nbcli
                                     operation]</span>
                             </div>
@@ -1910,9 +1842,8 @@
                             <div class="param-item">
                                 <span class="param-name">operation</span> <span class="param-type">string</span>
                                 <div class="param-description">activate | build | dump | reset | order | target</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=8f46ea2b33244d48baba56556705702b&pm=s"
-                                        target="_blank">nbcli.DB.markov</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/markov"
+                                        target="_blank">nbcli.kb.markov</a></span>
                             </div>
                         </div>
                     </div>
@@ -1948,9 +1879,8 @@
                                 <span class="param-name">operation</span> <span class="param-type">string</span>
                                 <div class="param-description">Operation to sequence.</div>
 
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=dfd016bb7cf0417e84cac61544423698&pm=s"
-                                        target="_blank">nbcli.DB.gen</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/gen"
+                                        target="_blank">nbcli.kb.gen</a></span>
                             </div>
                             <h4 class="command-title">Examples</h4>
                             <div class="code-block">gen 0. 0.1 1 0.5 "hello"
@@ -1972,9 +1902,8 @@
                             <div class="param-item">
                                 <span class="param-name">value</span> <span class="param-type">number (float)</span>
                                 <div class="param-description">Number of random float results to be printed</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=49334c582741470b9951e749b9675710&pm=s"
-                                        target="_blank">nbcli.DB.rnr</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/rnr"
+                                        target="_blank">nbcli.kb.rnr</a></span>
                             </div>
                         </div>
 
@@ -1996,9 +1925,8 @@
                             <div class="param-item">
                                 <span class="param-name">value</span> <span class="param-type">number (float)</span>
                                 <div class="param-description">Number of random float results to be printed</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=43ace8986cfe4efabab07bf62393403a&pm=s"
-                                        target="_blank">nbcli.DB.rsr</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/rsr"
+                                        target="_blank">nbcli.kb.rsr</a></span>
                             </div>
                         </div>
 
@@ -2020,9 +1948,8 @@
                             <div class="param-item">
                                 <span class="param-name">value</span> <span class="param-type">number (int)</span>
                                 <div class="param-description">Number to count to.</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=a1088d17f0ec4d74ae6949bc926755c9&pm=s"
-                                        target="_blank">nbcli.DB.count</a></span>
+                                <br><span class="param-type"><a href="https://magfoto.any.org/count"
+                                        target="_blank">nbcli.kb.count</a></span>
                             </div>
                         </div>
 
@@ -2047,9 +1974,8 @@
                                 <br>
                                 <span class="param-name">operation</span> <span class="param-type">number (int)</span>
                                 <div class="param-description">Loop maximum</div>
-                                <br><span class="param-type"><a
-                                        href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33?p=100b0bb72d76413f83301e2c41c43ffb&pm=s"
-                                        target="_blank">nbcli.DB.sfor</a></span>
+                                <br><span class="param-type"><a href="hhttps://magfoto.any.org/sfor"
+                                        target="_blank">nbcli.kb.sfor</a></span>
                             </div>
                         </div>
 
@@ -2089,8 +2015,7 @@
                 <div class="reference-section">
                     <h3 class="reference-title">Quick Reference</h3>
                     <ul class="reference-list">
-                        <li><a href="https://tulip-writer-ee7.notion.site/nbcli-cmds-915f387387c1435d9c64dbcee94b9e33"
-                                target="_blank">nbcli Commands Database</a></li>
+                        <li><a href="https://magfoto.any.org/kb" target="_blank">nbcli Knowledge Base</a></li>
                         <li><a href="https://github.com/nbcli-meta/nbcli" target="_blank">Installation Instructions</a>
                         </li>
                         <li><a href="https://docs.cycling74.com/">Max 9 Docs</a></li>
@@ -2123,11 +2048,6 @@
 
             </aside>
         </div>
-    </div>
-    <div class="status">
-        <span class="status-dot">
-        </span>
-        <img src="nbcli.svg" width="90vh" height="90vh" />
     </div>
 </body>
 

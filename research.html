@@ -6,188 +6,112 @@
     <title>nbcli Research</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <meta name="keywords" content="" />
     <meta name="description" content="nbcli meta-instrument" />
     <meta name="author" content="magfoto" />
 
-    <link rel="stylesheet" href="global.css">
-    </link>
+    <style>
+        .main {
+            position: relative;
+            opacity: 1;
+            /* text-align: center; */
+        }
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        @keyframes sleft {
+            to {
+                left: 0px;
+                opacity: 1;
+            }
 
-    <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+            from {
+                left: 200px;
+                opacity: 0.2;
+            }
+        }
 
-    <script>hljs.highlightAll();</script>
+        .main {
+            animation-name: sleft;
+            animation-duration: 2.5s;
+        }
+    </style>
 
 </head>
 
-<body class="avenir f5 lh-copy center measure-wide">
-    <section class="pa3 pa4-m pa5-l">
-        <a href="index.html" class="f5 link dim br2 ph3 pv2 mb2 dib white bg-near-black dib grow">
-            <svg class="w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
-                <title>chevronLeft icon</title>
-                <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
-            </svg>
-        </a>
-        <a href="research.html" class="f5 link dim br2 ph3 pv2 mb2 dib white bg light-blue dib grow">
-            Research
-        </a>
-        <a href="https://github.com/nbcli-meta/nbcli" class="f5 link dim br2 ph3 pv2 mb2 dib white lblue dib grow"
-            target="_blank">
-            Install
-        </a>
-        <a href="meta-notation.html" class="f5 link dim br2 ph3 pv2 mb2 dib white lblue dib grow" target="_blank">
-            Notation
-        </a>
-        <a href="cmds.html" class="f5 link dim br2 ph3 pv2 mb2 dib lblue dib grow">
-            Commands
-        </a>
-        <a href="https://magfoto.itch.io/sigv" class="f5 link dim br2 ph3 pv2 mb2 dib white bluegel dib grow"
-            target="_blank">
-            Download sigv
-        </a>
-    </section>
+<body>
+    <div class="main">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 320.2 792"
+            width="100vh" height="100vh">
+            <defs>
+                <style>
+                    .txt {
+                        font-family: AvenirNext-Regular, 'Avenir Next', 'Avenir', 'Avenir Next LT Pro', 'Avenir LT Pro', 'Helvetica Neue', Helvetica;
+                        fill: #231f20;
+                        font-size: 12px;
+                        letter-spacing: 0em;
+                    }
 
-    <section class="pa3 pa4-m pa5-l">
-        <p>nbcli is the name of this instrument, and the name given to the ongoing research from which it was born.</p>
-        <img class="db center" src="domains.png" width="750px" />
-        <p>Meant for live coding, I became interested in accessing a variety of instruments while improvising, and
-            became interested in harnessing a way to access many tools on my machine. This pointed me towards the
-            command line and specifically the Bash language. As a research goal, I also wanted a tool for live coding
-            visuals that was customized for live coding 3D geometry, and something to live code physical computing
-            concoctions I might want to use. To me, this meant something to live code <a
-                href="https://en.wikipedia.org/wiki/General-purpose_input/output" target="_blank">GPIO</a> pins.</p>
-        <figure class="pb5">
-            <img class="db center" src="exp-dark.png" width="750px" />
-            <figcaption class="measure-narrow f7 center"><b>Figure 2.</b> Scan from research: expressivity.</figcaption>
-        </figure>
-        <p>Putting these objectives together, nbcli amounted to two things:</p>
+                    .go {
+                        fill: slategray;
+                    }
 
-        <ul>
-            <li>a standalone application called <em>sigv</em>, built in Max</li>
-            <li>a configuration of Bash programs as utilities, commands, and terminal configurations.</li>
-        </ul>
-        <br /><br /><br />
-        <figure class="pb5">
-            <div class="w-70 center">
-                <img class="o-05" src="siamese.png" width="50%" /><img src="siamese.png" width="50%" />
-                <figcaption class="measure-narrow f7 center"><b>Figure 3. </b>Siamese Clocks, Orca code pattern that
-                    bounds clock operators.</figcaption>
-            </div>
-        </figure>
-        <figure class="pb5">
-            <div class="w-100">
-                <img class="db center" src="setups.png" width="750px" />
-                <figcaption class="measure-narrow f7 center"><b>Figure 3. </b>Imagining the various ways I would need
-                    this instrument to accomodate performance and installation</figcaption>
-            </div>
-        </figure>
-        <h3>Try it!</h3>
+                    .go:hover {
+                        fill: gray;
+                    }
 
-        <p>To project you into my world of using this tool, download and extract the standalone from <a class="autolink"
-                href="https://magfoto.itch.io/sigv" target="_blank">itch.io</a>, then run the <a
-                href="https://github.com/nbcli-meta/nbcli" target="_blank">nbcli install</a> script which will install
-            the following:
-        </p>
+                    .medi {
+                        fill: none;
+                        stroke: #231f20;
+                    }
 
-        <ul>
-            <li>MIDI utilities</li>
-            <li>OSC message sending utility</li>
-            <li>QR code making utility</li>
-            <li>directory of Bash scripts</li>
-            <li>terminal configuration file</li>
-        </ul>
+                    .circs {
+                        fill: #fff;
+                        stroke: #131313;
+                        stroke-miterlimit: 28.8;
+                        stroke-width: .5px;
+                    }
+                </style>
+            </defs>
+            <line id="median" class="medi" x1="135.1" x2="135.1" y2="792" />
+            <circle id="circ-1" class="circs" cx="134.4" cy="145.8" r="4.8" />
+            <a class="navi" href="#">
+                <text class="txt" transform="translate(57.6 147.9)">
+                    <tspan x="0" y="0">Overview</tspan>
+                </text>
+            </a>
+            <text class="txt" transform="translate(57.6 147.9)">
+                <tspan x="100">This researh is grounded in archimusic, a domain that combines both</tspan>
+                <tspan x="100" y="20">architecture and music. The conflation of these disciplines result</tspan>
+                <tspan x="100" y="40">into works of art and science that sit simultaneously in real-world</tspan>
+                <tspan x="100" y="60">and artificial contexts <a class="go"
+                        href="https://cast.b-ap.net/wp-content/uploads/sites/29/2014/09/Novak.pdf"
+                        target="_blank">(Novak 1996)</a>.</tspan>
+            </text>
+            <text class="txt" transform="translate(57.6 247.9)">
+                <tspan x="100">This research is also grounded in the practice of live coding.</tspan>
+                <tspan x="100" y="20">Live coding, is a term that can be defined as: a practice</tspan>
+                <tspan x="100" y="40">“...about people interacting with the world, and each other,</tspan>
+                <tspan x="100" y="60">in real time, via code“ <a class="go" href="https://livecodingbook.toplap.org/"
+                        target="_blank">(Blackwell et al. 2022,
+                        2)</a>. The book,</tspan>
+                <tspan x="100" y="80">"Live Coding: A User's Manual", challenges traditional</tspan>
+                <tspan x="100" y="100">definitions of live coding, presenting it as more than writing</tspan>
+                <tspan x="100" y="120">software in real-time, but as a way people interact with the</tspan>
+                <tspan x="100" y="140">world and each other through code (Ibid.).</tspan>
+            </text>
+            <text class="txt" transform="translate(57.6 430.9)">
+                <tspan x="100">Having explored a variety of live coding languages, the one aspect I</tspan>
+                <tspan x="100" y="20">found that was lacking were languages focused on visual coding, ones</tspan>
+                <tspan x="100" y="40">that code three-dimensional geometric shapes. With the intent to create</tspan>
+                <tspan x="100" y="60">an instrument for both music and architecture, the lacking aspect of</tspan>
+                <tspan x="100" y="80">three-dimensional geometry making was of importance and became</tspan>
+                <tspan x="100" y="100">the first problem for this research to address.</tspan>
 
-        <p>When ready, with your terminal open:</p>
-
-        <pre><code class="f7">sigv</code></pre>
-
-        <p>This should open the sigv standalone you downloaded and placed in the /Applications directory on your
-            computer (I made this on macOS). If this did nothing for you, you may have extracted your downloaded
-            application elsewhere, so you have two simple options:</p>
-
-        <ul>
-            <li>(macOS users) Move <a class="autolink" href="https://sigv.app">sigv.app</a> to the /Applications
-                directory</li>
-            <li>Or, open this invisible file with a text editor: /nbcli/sigv (referring to the folder created by the
-                install script).</li>
-        </ul>
-
-        <p>This is what the code looks like when you open it:</p>
-
-        <pre><code class="f7">
-        #!/bin/bash
-
-        if [[ &quot;$1&quot; == &quot;--config&quot; ]]
-        then
-            nano $HOME/nbcli/.sigvsh
-        elif [[ &quot;$1&quot; == &quot;-b&quot; ]]
-        then
-            cd $HOME/nbcli &amp;&amp; ls
-        else
-            echo &quot;Options: sigv --config [open .sigvsh configuration] -b [go to nbcli directory]&quot;
-            echo &quot; &quot;
-            echo &quot;sigv: an instrument and mini-language for transmodal live coding&quot;
-            echo &quot;https://magfoto.itch.io/sigv&quot;
-            open /Applications/sigv.app
-            cd &quot;$HOME/nbcli/&quot;
-        fi
-        </code></pre>
-
-        <p>Line 14 shows
-        <pre><code class="f7">open /Applications/sigv.app</code></pre> which you can change to the location of where you
-        have
-        your <a class="autolink" href="https://sigv.app">sigv.app</a> file (or sigv.exe on Windows).</p>
-
-        <p>So now you can run
-        <pre><code class="f7">sigv</code></pre> again and it should open a very small window (almost invisible) with
-        a little square and a “quit” button. </p>
-
-        <figure>
-            <img src="sigv-app.png" alt="" />
-        </figure>
-
-        <p>Above that is an invisible textfield, mostly meant for backup use, as the commands you send are actually from
-            the terminal window. Windows users who are having trouble with *nix (unix/linux flavor operating systems)
-            running on their machine, you can omit the terminal and use that textfield to send sigv commands.</p>
-
-        <p>From your terminals, let’s add some commands:</p>
-
-        <pre><code class="f7">
-        new wrld 0 0 wrld
-        </code></pre>
-
-        <p>A big window opens. Let’s change it’s size and precision:</p>
-
-        <pre><code class="f7">
-        wrld size 400 400
-        wrld dim 400 400
-        </code></pre>
-
-        <p>Much smaller window now. Now let’s load a primitive called <em>geo</em>:</p>
-
-        <pre><code class="f7">
-        new geo 0 0 geo
-        geo iso
-        </code></pre>
-
-        <p>You should see this...</p>
-
-        <figure>
-            <img src="sigv-window.png" width="75%" alt="" />
-        </figure>
-
-        <p>If you do, congratulations! (phew) </p>
-
-        <p>To try some more examples, take a closer look at the <a href="cmds.html">commands</a>! A
-            work in progress.
-        </p>
-        <br />
-        <hr />
-        <p>- Marcus (<a href="https://magfoto.dev/" target="_blank">@magfoto</a>)</p>
-    </section>
-
+                <tspan x="100" y="163">The result of these explorations is the <a class="go" href="index.html">nbcli
+                        meta-instrument</a>.</tspan>
+                <tspan x="100" y="193">Author: <a class="go" href="https://magfoto.dev" target="_blank">magfoto</a>
+                </tspan>
+            </text>
+        </svg>
+    </div>
 </body>
 
 </html>
